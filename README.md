@@ -1,2 +1,2 @@
-# android-shool-app
+# android-school-app
 App for Android developers
