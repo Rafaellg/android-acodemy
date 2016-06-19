@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Android School</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_author_email">rafaellguimas@gmail.com</string>
+
+    <!-- CATEGORIES -->
+    <string name="cat_title">Categorias</string>
+    <string name="cat_buttom">Botões</string>
+    <string name="cat_list">Listas</string>
+    <string name="cat_layout">Layouts</string>
+    <string name="cat_progress_bar">Barras de progresso</string>
+    <string name="cat_dialog">Dialog</string>
+    <string name="cat_edittext">EditText</string>
+    <string name="cat_textview">TextView</string>
+    <string name="cat_container">Containers</string>
+
+    <!-- BUTTOM CATEGORY -->
+    <string name="item_simple_btn">Simples</string>
+    <string name="item_float_btn">Float Action Button</string>
+    <string name="item_radio_btn">Radio Button</string>
+    <string name="item_toggle_btn">Toggle Button</string>
+    <string name="item_image_btn">Image Button</string>
+</resources>
