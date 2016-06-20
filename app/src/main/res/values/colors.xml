@@ -5,8 +5,7 @@
     <color name="colorAccent">#43A047</color>
 
     <color name="btnColor">#282828</color>
-    <color name="btnColorDark">#9E9E9E</color>
-    <color name="btnTextColor">#424242</color>
+    <color name="btnColorDark">#3b3b3b</color>
     <color name="bgColor">#00695C</color>
 
     <color name="black_overlay">#66000000</color>
