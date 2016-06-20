@@ -10,22 +10,22 @@ import android.widget.TextView;
 
 import com.kreativ.rafael.androidschool.R;
 
-public class SimpleButtonXMLFragment extends Fragment {
+public class FloatingtActionButtonXMLFragment extends Fragment {
 
-    public SimpleButtonXMLFragment() {
+    public FloatingtActionButtonXMLFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_button_xml, container, false);
+        View view = inflater.inflate(R.layout.fragment_floating_action_button_xml, container, false);
 
-        String text = "<Button\n" +
+        String text = "<android.support.design.widget.FloatingActionButton\n" +
+                "        android:id=\"@+id/fabDemo\"\n" +
                 "        android:layout_width=\"wrap_content\"\n" +
                 "        android:layout_height=\"wrap_content\"\n" +
-                "        android:text=\"Button\"\n" +
-                "        android:id=\"@+id/btnDemo\"\n" +
-                "        android:layout_gravity=\"center\" />";
+                "        android:src=\"@drawable/ic_touch_app_white_24dp\"\n" +
+                "        android:layout_gravity=\"center\"/>";
 
         TextView txtDemo = (TextView) view.findViewById(R.id.txtDemo);
         txtDemo.setText(text);

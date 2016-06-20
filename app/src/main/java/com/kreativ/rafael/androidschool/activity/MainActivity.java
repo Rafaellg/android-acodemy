@@ -1,9 +1,6 @@
 package com.kreativ.rafael.androidschool.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,7 +13,6 @@ import android.view.MenuItem;
 import com.kreativ.rafael.androidschool.Util;
 import com.kreativ.rafael.androidschool.fragment.StartFragment;
 import com.kreativ.rafael.androidschool.fragment.category.CategoryButtonFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonDemoFragment;
 import com.kreativ.rafael.androidschool.R;
 import com.roughike.bottombar.BottomBar;
 
@@ -124,6 +120,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mBottomBar.hide();
 
         return true;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Necessary to restore the BottomBar's state, otherwise we would
+        // lose the current tab on orientation change.
+        mBottomBar.onSaveInstanceState(outState);
     }
 
     public BottomBar getBottomBar() {

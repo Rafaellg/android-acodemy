@@ -18,8 +18,8 @@
     <string name="cat_container">Containers</string>
 
     <!-- BUTTOM CATEGORY -->
-    <string name="item_simple_btn">Simples</string>
-    <string name="item_float_btn">Float Action Button</string>
+    <string name="item_simple_btn">Simple Button</string>
+    <string name="item_floating_btn">Float Action Button</string>
     <string name="item_radio_btn">Radio Button</string>
     <string name="item_toggle_btn">Toggle Button</string>
     <string name="item_image_btn">Image Button</string>

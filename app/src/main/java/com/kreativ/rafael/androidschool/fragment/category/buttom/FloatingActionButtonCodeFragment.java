@@ -10,22 +10,22 @@ import android.widget.TextView;
 
 import com.kreativ.rafael.androidschool.R;
 
-public class SimpleButtonCodeFragment extends Fragment {
+public class FloatingActionButtonCodeFragment extends Fragment {
 
-    public SimpleButtonCodeFragment() {
+    public FloatingActionButtonCodeFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_button_code, container, false);
+        View view = inflater.inflate(R.layout.fragment_floating_action_button_code, container, false);
 
-        String text = "Button btnDemo = (Button) findViewById(R.id.btnDemo);\n" +
-                "btnDemo.setText(\"Button\");\n" +
-                "btnDemo.setOnClickListener(new View.OnClickListener() {\n" +
+        String text = "FloatingActionButton fabDemo = (FloatingActionButton) view.findViewById(R.id.fabDemo);\n" +
+                "fabDemo.setBackgroundResource(R.drawable.ic_touch_app_white_24dp);\n" +
+                "fabDemo.setOnClickListener(new View.OnClickListener() {\n" +
                 "       @Override\n" +
                 "       public void onClick(View v) {\n" +
-                "           Toast.makeText(this, \"Button clicked!\", Toast.LENGTH_SHORT).show();\n" +
+                "               Toast.makeText(getContext(), \"Button clicked!\", Toast.LENGTH_SHORT).show();\n" +
                 "       }\n" +
                 "});";
 
