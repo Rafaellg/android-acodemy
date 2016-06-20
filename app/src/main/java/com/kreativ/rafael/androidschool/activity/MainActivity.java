@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.Util;
 import com.kreativ.rafael.androidschool.fragment.StartFragment;
@@ -111,19 +112,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .addToBackStack(null)
                     .commit();
         } else if (id == R.id.cat_list) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_layout) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_progress_bar) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_dialog) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_edittext) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_textview) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.cat_container) {
-
+            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

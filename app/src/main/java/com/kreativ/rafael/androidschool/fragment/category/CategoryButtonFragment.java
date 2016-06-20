@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
@@ -27,10 +28,9 @@ public class CategoryButtonFragment extends Fragment {
         // Get buttons from screen
         Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
         Button btnFloatActionButton = (Button) view.findViewById(R.id.btnFloatActionButton);
-//        Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
-//        Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
-//        Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
-//        Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
+        Button btnRadioButton = (Button) view.findViewById(R.id.btnRadioButton);
+        Button btnToggleButton = (Button) view.findViewById(R.id.btnToggleButton);
+        Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
 
         // Set buttons click
         btnSimpleButton.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +61,24 @@ public class CategoryButtonFragment extends Fragment {
                         .replace(R.id.container, demoFragment)
                         .addToBackStack(null)
                         .commit();
+            }
+        });
+        btnRadioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
             }
         });
 
