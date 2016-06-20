@@ -1,10 +1,21 @@
 <resources>
-    <string name="app_name">Android School</string>
 
+    <!-- GENERAL -->
+    <string name="app_name">Android School</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="title_author_email">rafaellguimas@gmail.com</string>
+    <string name="title_author_name">Rafael Guimarães de Sousa</string>
+    <string name="title_version">v. 1.0</string>
+
+    <!-- START -->
+    <string name="text_welcome">Bem vindo ao Android School!</string>
+    <string name="text_select_category">Selecione uma categoria no menu lateral</string>
+    <string name="text_github">GitHub</string>
+    <string name="text_about">Sobre o app</string>
+
+    <!-- ABOUT -->
+    <string name="title_activity_about">Sobre o Android School</string>
 
     <!-- CATEGORIES -->
     <string name="cat_title">Categorias</string>

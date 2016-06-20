@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#455A64</color>
-    <color name="colorPrimaryDark">#263238</color>
-    <color name="colorAccent">#4cae50</color>
+    <color name="colorPrimary">#388E3C</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#43A047</color>
+
+    <color name="btnColor">#282828</color>
+    <color name="btnColorDark">#9E9E9E</color>
+    <color name="btnTextColor">#424242</color>
+    <color name="bgColor">#00695C</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

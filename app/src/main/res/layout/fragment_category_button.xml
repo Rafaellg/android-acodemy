@@ -1,10 +1,24 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.DemoFragment"
-    android:orientation="vertical"
-    android:padding="@dimen/padding_normal">
+    android:background="@color/bgColor">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/img_people_03_1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_normal">
 
     <Button
         android:text="@string/item_simple_btn"
@@ -30,4 +44,6 @@
         android:text="@string/item_image_btn"
         android:id="@+id/btnImageButton"
         style="@style/AppTheme.Button" />
-</LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
