@@ -39,17 +39,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Start the bottom bar for intern fragments
-        mBottomBar = Util.setupBottomBar(this, savedInstanceState);
-
-        // Hide the bottom bar
-        mBottomBar.hide();
-
         // Set the start fragment
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container, new StartFragment())
-                .addToBackStack(null)
                 .commit();
     }
 
@@ -60,16 +53,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-
-            // Hide the bottom bar
-            mBottomBar.hide();
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+//        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -96,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -130,19 +120,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
-        // Hide the bottom bar
-        mBottomBar.hide();
-
         return true;
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-
-        // Necessary to restore the BottomBar's state, otherwise we would
-        // lose the current tab on orientation change.
-        mBottomBar.onSaveInstanceState(outState);
     }
 
     public BottomBar getBottomBar() {

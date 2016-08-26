@@ -11,9 +11,9 @@ import android.widget.Toast;
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FloatingActionButtonCodeFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FloatingActionButtonComponentFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FloatingtActionButtonXMLFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.FABCodeFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.FABComponentFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.FABXMLFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonCodeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonComponentFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonXMLFragment;
@@ -52,9 +52,9 @@ public class CategoryButtonFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_floating_btn),
-                        new FloatingActionButtonComponentFragment(),
-                        new FloatingActionButtonCodeFragment(),
-                        new FloatingtActionButtonXMLFragment());
+                        new FABComponentFragment(),
+                        new FABCodeFragment(),
+                        new FABXMLFragment());
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()

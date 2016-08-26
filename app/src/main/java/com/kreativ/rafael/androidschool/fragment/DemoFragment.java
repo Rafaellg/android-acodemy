@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnMenuTabClickListener;
+import com.roughike.bottombar.OnTabSelectListener;
 
 public class DemoFragment extends Fragment {
 
@@ -40,21 +42,28 @@ public class DemoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Get the bottom bar
-        mBottomBar = ((MainActivity) getActivity()).getBottomBar();
-        mBottomBar.show();
+        // Habilita o menu
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_demo, container, false);
+
+        // Declara a bottom bar
+        mBottomBar = (BottomBar) view.findViewById(R.id.bottomBar);
 
         // Set tabs click
-        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
+        mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
-            public void onMenuTabSelected(@IdRes int menuItemId) {
+            public void onTabSelected(@IdRes int tabId) {
                 Fragment fragment = null;
 
-                if (menuItemId == R.id.bottomBarItemOne) {
+                if (tabId == R.id.bottomBarItemOne) {
                     fragment = fragmentComponent;
-                } else if (menuItemId == R.id.bottomBarItemTwo) {
+                } else if (tabId == R.id.bottomBarItemTwo) {
                     fragment = fragmentCode;
-                } else if (menuItemId == R.id.bottomBarItemThree) {
+                } else if (tabId == R.id.bottomBarItemThree) {
                     fragment = fragmentXML;
                 }
 
@@ -64,17 +73,7 @@ public class DemoFragment extends Fragment {
                         .replace(R.id.inner_container, fragment)
                         .commit();
             }
-
-            @Override
-            public void onMenuTabReSelected(@IdRes int menuItemId) {
-                // Nothing
-            }
         });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_demo, container, false);
 
         return view;
     }
@@ -85,6 +84,13 @@ public class DemoFragment extends Fragment {
 
         // Define o título da activity
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        inflater.inflate(R.menu.fragment_demo_menu, menu);
     }
 
     public void setFragmentComponent(Fragment fragmentComponent) {

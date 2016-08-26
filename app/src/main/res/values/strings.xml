@@ -17,6 +17,11 @@
     <!-- ABOUT -->
     <string name="title_activity_about">Sobre o Android School</string>
 
+    <!-- BOTTOM BAR -->
+    <string name="tab_component">ANDROID</string>
+    <string name="tab_java">JAVA</string>
+    <string name="tab_xml">XML</string>
+
     <!-- CATEGORIES -->
     <string name="cat_title">Categorias</string>
     <string name="cat_buttom">Botões</string>
@@ -30,8 +35,22 @@
 
     <!-- BUTTOM CATEGORY -->
     <string name="item_simple_btn">Simple Button</string>
-    <string name="item_floating_btn">Float Action Button</string>
+    <string name="item_floating_btn">Floating Action Button</string>
     <string name="item_radio_btn">Radio Button</string>
     <string name="item_toggle_btn">Toggle Button</string>
     <string name="item_image_btn">Image Button</string>
+
+    <!-- FAB -->
+    <string name="new_line">\n</string>
+    <string name="tab">\t</string>
+    <string name="fab_declaration">FloatingActionButton fabDemo = (FloatingActionButton) view.findViewById(R.id.fabDemo); \n</string>
+    <string name="fab_set_bg_res_open">fabDemo.setBackgroundResource(</string>
+    <string name="fab_set_bg_res_close">); \n</string>
+    <string name="fab_set_click_lis_open">fabDemo.setOnClickListener(new View.OnClickListener() {\n
+        \t@Override \n
+        \tpublic void onClick(View v) { \n</string>
+    <string name="fab_set_click_lis_close">\t} \n
+        });</string>
+    <string name="toast_open">Toast.makeText(getContext(),</string>
+    <string name="toast_close">, Toast.LENGTH_SHORT).show(); \n</string>
 </resources>

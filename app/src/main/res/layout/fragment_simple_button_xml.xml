@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonXMLFragment"
-    android:background="@color/bgColor">
+    android:background="@color/bgPrimaryColor">
 
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"

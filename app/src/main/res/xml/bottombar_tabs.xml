@@ -1,0 +1,17 @@
+<tabs>
+    <tab
+        id="@+id/bottomBarItemOne"
+        icon="@drawable/ic_adb_black_24dp"
+        title="@string/tab_component"
+        barColorWhenSelected="@color/colorAccent" />
+    <tab
+        id="@+id/bottomBarItemTwo"
+        icon="@drawable/ic_code_black_24dp"
+        title="@string/tab_java"
+        barColorWhenSelected="@color/colorAccent" />
+    <tab
+        id="@+id/bottomBarItemThree"
+        icon="@drawable/ic_polymer_black_24dp"
+        title="@string/tab_xml"
+        barColorWhenSelected="@color/colorAccent" />
+</tabs>

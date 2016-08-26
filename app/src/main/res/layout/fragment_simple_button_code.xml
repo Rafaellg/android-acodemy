@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonCodeFragment"
-    android:background="@color/bgColor">
+    android:background="@color/bgPrimaryColor">
 
     <LinearLayout
         android:layout_width="match_parent"

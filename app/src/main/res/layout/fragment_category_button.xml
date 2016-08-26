@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.DemoFragment"
-    android:background="@color/bgColor">
+    android:background="@color/bgPrimaryColor">
 
     <ImageView
         android:layout_width="wrap_content"
