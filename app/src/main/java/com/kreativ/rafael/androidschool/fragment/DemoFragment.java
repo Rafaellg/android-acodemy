@@ -1,39 +1,45 @@
 package com.kreativ.rafael.androidschool.fragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
+import com.kreativ.rafael.androidschool.util.CustomFragment;
+import com.kreativ.rafael.androidschool.util.Util;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 public class DemoFragment extends Fragment {
 
-    private Fragment fragmentComponent;
+    private CustomFragment fragmentComponent;
     private Fragment fragmentCode;
     private Fragment fragmentXML;
+    private boolean[] propertyVisibles;
     private String title;
-
-    private BottomBar mBottomBar;
 
     public DemoFragment() {
         // Required empty public constructor
     }
 
-    public static DemoFragment newInstance(String title, Fragment fragmentComponent, Fragment fragmentCode, Fragment fragmentXML) {
+    public static DemoFragment newInstance(String title, CustomFragment fragmentComponent, Fragment fragmentCode, Fragment fragmentXML, boolean[] properties) {
         DemoFragment fragment = new DemoFragment();
 
         fragment.setFragmentComponent(fragmentComponent);
         fragment.setFragmentCode(fragmentCode);
         fragment.setFragmentXML(fragmentXML);
         fragment.setTitle(title);
+        fragment.setPropertyVisibles(properties);
 
         return fragment;
     }
@@ -51,7 +57,7 @@ public class DemoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_demo, container, false);
 
         // Declara a bottom bar
-        mBottomBar = (BottomBar) view.findViewById(R.id.bottomBar);
+        BottomBar mBottomBar = (BottomBar) view.findViewById(R.id.bottomBar);
 
         // Set tabs click
         mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
@@ -93,7 +99,34 @@ public class DemoFragment extends Fragment {
         inflater.inflate(R.menu.fragment_demo_menu, menu);
     }
 
-    public void setFragmentComponent(Fragment fragmentComponent) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        String[] propertyLabels = Util.getPropertiesLabel(propertyVisibles, getContext());
+
+        switch (item.getItemId()) {
+            case R.id.action_edit:
+                new AlertDialog.Builder(getContext())
+                        .setTitle(R.string.title_dialog_edit)
+                        .setItems(propertyLabels, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (which == 0) {
+                                    fragmentComponent.setColor(R.color.black);
+                                } else if (which == 1) {
+                                    Toast.makeText(getContext(), "2", Toast.LENGTH_SHORT).show();
+                                } else if (which == 2) {
+                                    Toast.makeText(getContext(), "3", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .show();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void setFragmentComponent(CustomFragment fragmentComponent) {
         this.fragmentComponent = fragmentComponent;
     }
 
@@ -107,5 +140,9 @@ public class DemoFragment extends Fragment {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setPropertyVisibles(boolean[] propertyVisibles) {
+        this.propertyVisibles = propertyVisibles;
     }
 }

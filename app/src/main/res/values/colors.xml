@@ -9,5 +9,8 @@
     <color name="bgPrimaryColor">#282b2e</color>
     <color name="bgSecondaryColor">#f0f0f0</color>
 
-    <color name="black_overlay">#66000000</color>
+    <color name="blackOverlay">#66000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 </resources>

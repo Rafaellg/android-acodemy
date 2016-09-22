@@ -13,6 +13,7 @@ import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABCodeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABComponentFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.FABDemoFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABXMLFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonCodeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonComponentFragment;
@@ -27,7 +28,7 @@ public class CategoryButtonFragment extends Fragment {
 
         // Get buttons from screen
         Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
-        Button btnFloatActionButton = (Button) view.findViewById(R.id.btnFloatActionButton);
+        Button btnFloatingActionButton = (Button) view.findViewById(R.id.btnFloatActionButton);
         Button btnRadioButton = (Button) view.findViewById(R.id.btnRadioButton);
         Button btnToggleButton = (Button) view.findViewById(R.id.btnToggleButton);
         Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
@@ -36,25 +37,27 @@ public class CategoryButtonFragment extends Fragment {
         btnSimpleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_simple_btn),
-                        new SimpleButtonComponentFragment(),
-                        new SimpleButtonCodeFragment(),
-                        new SimpleButtonXMLFragment());
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, demoFragment)
-                        .addToBackStack(null)
-                        .commit();
+//                DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_simple_btn),
+//                        new SimpleButtonComponentFragment(),
+//                        new SimpleButtonCodeFragment(),
+//                        new SimpleButtonXMLFragment(),
+//                        new boolean[]{true, true, true});
+//                getActivity()
+//                        .getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.container, demoFragment)
+//                        .addToBackStack(null)
+//                        .commit();
             }
         });
-        btnFloatActionButton.setOnClickListener(new View.OnClickListener() {
+        btnFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_floating_btn),
                         new FABComponentFragment(),
                         new FABCodeFragment(),
-                        new FABXMLFragment());
+                        new FABXMLFragment(),
+                        new boolean[]{true, true, true});
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()

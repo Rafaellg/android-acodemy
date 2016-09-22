@@ -7,6 +7,12 @@
     <string name="title_author_email">rafaellguimas@gmail.com</string>
     <string name="title_author_name">Rafael Guimarães de Sousa</string>
     <string name="title_version">v. 1.0</string>
+    <string name="title_dialog_edit">Editar</string>
+
+    <!-- PROPERTIES -->
+    <string name="prop_color">Cor</string>
+    <string name="prop_size">Tamanho</string>
+    <string name="prop_icon">Ícone</string>
 
     <!-- START -->
     <string name="text_welcome">Bem vindo ao Android School!</string>
