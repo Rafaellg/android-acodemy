@@ -1,23 +1,25 @@
 package com.kreativ.rafael.androidschool.fragment.category.buttom;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
+import com.kreativ.rafael.androidschool.util.CustomFragment;
+import com.kreativ.rafael.androidschool.util.Util;
 
-import thereisnospon.codeview.CodeView;
-import thereisnospon.codeview.CodeViewTheme;
+import org.jetbrains.annotations.NotNull;
 
-public class FABCodeFragment extends Fragment {
+import io.github.kbiakov.codeview.CodeView;
+import io.github.kbiakov.codeview.OnCodeLineClickListener;
+
+public class FABCodeFragment extends CustomFragment {
 
     private CodeView codeView;
 
@@ -51,12 +53,19 @@ public class FABCodeFragment extends Fragment {
         String fabCode = getString(R.string.fab_declaration);
         fabCode += getString(R.string.fab_set_bg_res_open) + textIcon + getString(R.string.fab_set_bg_res_close);
         fabCode += getString(R.string.fab_set_click_lis_open);
-        fabCode += getString(R.string.tab) + getString(R.string.tab)+ getString(R.string.toast_open) + textOnClick + getString(R.string.toast_close);
+        fabCode += getString(R.string.tab) + getString(R.string.tab) + getString(R.string.toast_open) + textOnClick + getString(R.string.toast_close);
         fabCode += getString(R.string.fab_set_click_lis_close);
 
         codeView = (CodeView) view.findViewById(R.id.codeview);
-        codeView.setTheme(CodeViewTheme.ANDROIDSTUDIO).fillColor();
-        codeView.showCode(fabCode);
+        codeView.setColorTheme(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));
+        codeView.highlightCode(Util.getDefaultCodeLanguage());
+        codeView.setCodeContent(fabCode);
+        codeView.setCodeListener(new OnCodeLineClickListener() {
+            @Override
+            public void onCodeLineClicked(int n, @NotNull String line) {
+                Toast.makeText(getContext(), (n + 1) + " line clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }

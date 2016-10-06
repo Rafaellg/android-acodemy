@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kreativ.rafael.androidschool.CustomFragmentInterface;
 import com.kreativ.rafael.androidschool.R;
 
 /**
- * Created by Rafael on 21/09/2016.
+ * Modelo de fragmento para os demos
  */
-
-public class CustomFragment extends Fragment {
+public class CustomFragment extends Fragment implements CustomFragmentInterface {
 
     public CustomFragment() {
         // Required empty public constructor
@@ -25,14 +25,22 @@ public class CustomFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onEditOptionSelected(int which) {
+
+    }
+
+    @Override
     public void setColor(int color) {
 
     }
 
+    @Override
     public void setSize(int h, int w) {
 
     }
 
+    @Override
     public void setIcon(int drawable) {
 
     }

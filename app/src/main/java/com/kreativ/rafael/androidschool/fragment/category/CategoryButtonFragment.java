@@ -6,18 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FABCodeFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FABComponentFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FABDemoFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.FABXMLFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonCodeFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonComponentFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonXMLFragment;
+import com.kreativ.rafael.androidschool.util.EnumComponent;
 
 public class CategoryButtonFragment extends Fragment {
 
@@ -37,51 +30,31 @@ public class CategoryButtonFragment extends Fragment {
         btnSimpleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_simple_btn),
-//                        new SimpleButtonComponentFragment(),
-//                        new SimpleButtonCodeFragment(),
-//                        new SimpleButtonXMLFragment(),
-//                        new boolean[]{true, true, true});
-//                getActivity()
-//                        .getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.container, demoFragment)
-//                        .addToBackStack(null)
-//                        .commit();
+                openFragment(EnumComponent.BtnSimple);
             }
         });
         btnFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DemoFragment demoFragment = DemoFragment.newInstance(getString(R.string.item_floating_btn),
-                        new FABComponentFragment(),
-                        new FABCodeFragment(),
-                        new FABXMLFragment(),
-                        new boolean[]{true, true, true});
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.container, demoFragment)
-                        .addToBackStack(null)
-                        .commit();
+                openFragment(EnumComponent.BtnFAB);
             }
         });
         btnRadioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+                openFragment(EnumComponent.BtnRadio);
             }
         });
         btnToggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+                openFragment(EnumComponent.BtnToggle);
             }
         });
         btnImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+                openFragment(EnumComponent.BtnImage);
             }
         });
 
@@ -94,5 +67,14 @@ public class CategoryButtonFragment extends Fragment {
 
         // Define o título da activity
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.cat_buttom));
+    }
+
+    public void openFragment(EnumComponent enumComponent) {
+        getActivity()
+                .getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, DemoFragment.newInstance(enumComponent))
+                .addToBackStack(null)
+                .commit();
     }
 }

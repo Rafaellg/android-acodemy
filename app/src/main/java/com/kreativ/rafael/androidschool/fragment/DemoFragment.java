@@ -11,35 +11,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
-import com.kreativ.rafael.androidschool.util.Util;
+import com.kreativ.rafael.androidschool.util.EnumComponent;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 public class DemoFragment extends Fragment {
 
-    private CustomFragment fragmentComponent;
-    private Fragment fragmentCode;
-    private Fragment fragmentXML;
-    private boolean[] propertyVisibles;
-    private String title;
+    private EnumComponent enumComponent;
 
     public DemoFragment() {
         // Required empty public constructor
     }
 
-    public static DemoFragment newInstance(String title, CustomFragment fragmentComponent, Fragment fragmentCode, Fragment fragmentXML, boolean[] properties) {
+    public static DemoFragment newInstance(EnumComponent enumComponent) {
         DemoFragment fragment = new DemoFragment();
 
-        fragment.setFragmentComponent(fragmentComponent);
-        fragment.setFragmentCode(fragmentCode);
-        fragment.setFragmentXML(fragmentXML);
-        fragment.setTitle(title);
-        fragment.setPropertyVisibles(properties);
+        fragment.setEnumComponent(enumComponent);
 
         return fragment;
     }
@@ -63,14 +54,14 @@ public class DemoFragment extends Fragment {
         mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-                Fragment fragment = null;
+                CustomFragment fragment = null;
 
                 if (tabId == R.id.bottomBarItemOne) {
-                    fragment = fragmentComponent;
+                    fragment = enumComponent.getFragmentComponent();
                 } else if (tabId == R.id.bottomBarItemTwo) {
-                    fragment = fragmentCode;
+                    fragment = enumComponent.getFragmentCode();
                 } else if (tabId == R.id.bottomBarItemThree) {
-                    fragment = fragmentXML;
+                    fragment = enumComponent.getFragmentXML();
                 }
 
                 getActivity()
@@ -89,7 +80,7 @@ public class DemoFragment extends Fragment {
         super.onResume();
 
         // Define o título da activity
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(title);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(enumComponent.getTitle());
     }
 
     @Override
@@ -101,22 +92,16 @@ public class DemoFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String[] propertyLabels = Util.getPropertiesLabel(propertyVisibles, getContext());
-
         switch (item.getItemId()) {
             case R.id.action_edit:
                 new AlertDialog.Builder(getContext())
                         .setTitle(R.string.title_dialog_edit)
-                        .setItems(propertyLabels, new DialogInterface.OnClickListener() {
+                        .setItems(enumComponent.getProperties(), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                if (which == 0) {
-                                    fragmentComponent.setColor(R.color.black);
-                                } else if (which == 1) {
-                                    Toast.makeText(getContext(), "2", Toast.LENGTH_SHORT).show();
-                                } else if (which == 2) {
-                                    Toast.makeText(getContext(), "3", Toast.LENGTH_SHORT).show();
-                                }
+                                enumComponent.getFragmentComponent().onEditOptionSelected(which);
+                                enumComponent.getFragmentCode().onEditOptionSelected(which);
+                                enumComponent.getFragmentXML().onEditOptionSelected(which);
                             }
                         })
                         .show();
@@ -126,23 +111,7 @@ public class DemoFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setFragmentComponent(CustomFragment fragmentComponent) {
-        this.fragmentComponent = fragmentComponent;
-    }
-
-    public void setFragmentCode(Fragment fragmentCode) {
-        this.fragmentCode = fragmentCode;
-    }
-
-    public void setFragmentXML(Fragment fragmentXML) {
-        this.fragmentXML = fragmentXML;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setPropertyVisibles(boolean[] propertyVisibles) {
-        this.propertyVisibles = propertyVisibles;
+    public void setEnumComponent(EnumComponent enumComponent) {
+        this.enumComponent = enumComponent;
     }
 }

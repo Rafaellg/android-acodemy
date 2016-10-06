@@ -5,12 +5,12 @@
     tools:context=".fragment.category.buttom.FABXMLFragment"
     android:background="@color/bgPrimaryColor">
 
-    <thereisnospon.codeview.CodeView
+    <io.github.kbiakov.codeview.CodeView
         android:id="@+id/codeview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_centerInParent="true">
-    </thereisnospon.codeview.CodeView>
+    </io.github.kbiakov.codeview.CodeView>
 
 </RelativeLayout>

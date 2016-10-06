@@ -14,11 +14,8 @@ import android.widget.Toast;
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.StartFragment;
 import com.kreativ.rafael.androidschool.fragment.category.CategoryButtonFragment;
-import com.roughike.bottombar.BottomBar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    private BottomBar mBottomBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setElevation(0);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 //    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
+//    public boolean onEditOptionSelected(MenuItem item) {
 //        // Handle action bar item clicks here. The action bar will
 //        // automatically handle clicks on the Home/Up button, so long
 //        // as you specify a parent activity in AndroidManifest.xml.
@@ -123,9 +121,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-    }
-
-    public BottomBar getBottomBar() {
-        return mBottomBar;
     }
 }

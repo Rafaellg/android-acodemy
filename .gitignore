@@ -1,7 +1,7 @@
 # gitignore antigo
 *.iml
 .gradle
-/local.propertyVisibles
+/local.enumComponent
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
@@ -23,7 +23,7 @@ bin/
 gen/
 
 # Local configuration file (sdk path, etc)
-local.propertyVisibles
+local.enumComponent
 
 # Eclipse project files
 .classpath
@@ -32,7 +32,7 @@ local.propertyVisibles
 # Android Studio
 .idea/
 .gradle
-/*/local.propertyVisibles
+/*/local.enumComponent
 /*/out
 /*/*/build
 /*/*/production
