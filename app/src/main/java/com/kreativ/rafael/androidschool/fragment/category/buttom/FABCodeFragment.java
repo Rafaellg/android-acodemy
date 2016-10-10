@@ -69,15 +69,4 @@ public class FABCodeFragment extends CustomFragment {
 
         return view;
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_edit:
-                Toast.makeText(getContext(), "Editar (interior)!", Toast.LENGTH_SHORT).show();
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -1,5 +1,4 @@
 <resources>
-
     <!-- GENERAL -->
     <string name="app_name">Android School</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -27,6 +26,11 @@
     <string name="tab_component">ANDROID</string>
     <string name="tab_java">JAVA</string>
     <string name="tab_xml">XML</string>
+
+    <!-- DIALOGS -->
+    <string name="text_apply">Aplicar</string>
+    <string name="text_width">Largura:</string>
+    <string name="text_height">Altura:</string>
 
     <!-- CATEGORIES -->
     <string name="cat_title">Categorias</string>

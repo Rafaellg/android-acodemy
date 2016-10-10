@@ -2,7 +2,6 @@ package com.kreativ.rafael.androidschool.fragment.category.buttom;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
+import com.kreativ.rafael.androidschool.util.CustomFragment;
 
-public class SimpleButtonComponentFragment extends Fragment {
+public class SimpleButtonComponentFragment extends CustomFragment {
 
     public SimpleButtonComponentFragment() {
         // Required empty public constructor
