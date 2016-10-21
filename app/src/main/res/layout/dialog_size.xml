@@ -29,7 +29,7 @@
             android:id="@+id/sekWidth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="300"
+            android:max="500"
             app:markerColor="@color/colorPrimary"
             app:markerTextColor="#ffffff" />
     </LinearLayout>
@@ -57,7 +57,7 @@
             android:id="@+id/sekHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="300"
+            android:max="500"
             app:markerColor="@color/colorPrimary"
             app:markerTextColor="#ffffff" />
     </LinearLayout>

@@ -8,6 +8,9 @@
     <string name="title_version">v. 1.0</string>
     <string name="title_dialog_edit">Editar</string>
 
+    <!-- OTHERS -->
+    <string name="text_btn_click">Pressione</string>
+
     <!-- PROPERTIES -->
     <string name="prop_color">Cor</string>
     <string name="prop_size">Tamanho</string>
@@ -28,6 +31,7 @@
     <string name="tab_xml">XML</string>
 
     <!-- DIALOGS -->
+    <string name="title_dialog_color">Selecione a cor</string>
     <string name="text_apply">Aplicar</string>
     <string name="text_width">Largura:</string>
     <string name="text_height">Altura:</string>
@@ -49,18 +53,4 @@
     <string name="item_radio_btn">Radio Button</string>
     <string name="item_toggle_btn">Toggle Button</string>
     <string name="item_image_btn">Image Button</string>
-
-    <!-- FAB -->
-    <string name="new_line">\n</string>
-    <string name="tab">\t</string>
-    <string name="fab_declaration">FloatingActionButton fabDemo = (FloatingActionButton) view.findViewById(R.id.fabDemo); \n</string>
-    <string name="fab_set_bg_res_open">fabDemo.setBackgroundResource(</string>
-    <string name="fab_set_bg_res_close">); \n</string>
-    <string name="fab_set_click_lis_open">fabDemo.setOnClickListener(new View.OnClickListener() {\n
-        \t@Override \n
-        \tpublic void onClick(View v) { \n</string>
-    <string name="fab_set_click_lis_close">\t} \n
-        });</string>
-    <string name="toast_open">Toast.makeText(getContext(),</string>
-    <string name="toast_close">, Toast.LENGTH_SHORT).show(); \n</string>
 </resources>

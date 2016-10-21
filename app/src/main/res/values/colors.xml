@@ -13,4 +13,14 @@
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <!-- Selectable colors -->
+    <color name="materialRed">#F44336</color>
+    <color name="materialPink">#E91E63</color>
+    <color name="materialPurple">#9C27B0</color>
+    <color name="materialBlue">#2196F3</color>
+    <color name="materialGreen">#4CAF50</color>
+    <color name="materialYellow">#FFEB3B</color>
+    <color name="materialOrange">#FF5722</color>
+    <color name="materialBrown">#795548</color>
 </resources>

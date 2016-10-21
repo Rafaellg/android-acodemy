@@ -36,4 +36,5 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.0.2'
     compile 'com.github.softwee:codeview-android:1.1.2'
     compile "com.github.bq:markerseekbar:v0.9"
+    compile 'com.thebluealliance:spectrum:0.6.0'
 }

@@ -5,6 +5,8 @@ import android.support.v4.content.ContextCompat;
 
 import com.kreativ.rafael.androidschool.R;
 
+import java.util.List;
+
 import io.github.kbiakov.codeview.highlight.ColorTheme;
 
 /**
@@ -23,6 +25,35 @@ public class Util {
 
     public static String getDefaultCodeLanguage() {
         return DEFAULT_LANGUAGE;
+    }
+
+    public static String getStringFromCodeList(List<String> codeList) {
+        String code = "";
+
+        for (String line : codeList) {
+            code += line;
+        }
+
+        return code;
+    }
+
+    public static int[] getColorsArray(Context context) {
+        int[] colors = new int[8];
+
+        colors[0] = ContextCompat.getColor(context, R.color.materialRed);
+        colors[1] = ContextCompat.getColor(context, R.color.materialPink);
+        colors[2] = ContextCompat.getColor(context, R.color.materialPurple);
+        colors[3] = ContextCompat.getColor(context, R.color.materialBlue);
+        colors[4] = ContextCompat.getColor(context, R.color.materialGreen);
+        colors[5] = ContextCompat.getColor(context, R.color.materialYellow);
+        colors[6] = ContextCompat.getColor(context, R.color.materialOrange);
+        colors[7] = ContextCompat.getColor(context, R.color.materialBrown);
+
+        return colors;
+    }
+
+    public static String getHexFromIntColor(int color) {
+        return String.format("#%06X", (0xFFFFFF & color));
     }
 
 }

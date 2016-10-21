@@ -1,29 +1,25 @@
 package com.kreativ.rafael.androidschool.fragment.category.buttom;
 
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bq.markerseekbar.MarkerSeekBar;
 import com.kreativ.rafael.androidschool.R;
+import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
 
 public class FABComponentFragment extends CustomFragment {
 
     private FloatingActionButton fabDemo;
+    private int color = -1, width = -1, height = -1;
 
     public FABComponentFragment() {
         // Required empty public constructor
@@ -41,7 +37,6 @@ public class FABComponentFragment extends CustomFragment {
         View view = inflater.inflate(R.layout.fragment_fab_component, container, false);
 
         fabDemo = (FloatingActionButton) view.findViewById(R.id.fabDemo);
-        fabDemo.setBackgroundResource(R.drawable.ic_touch_app_white_24dp);
         fabDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,78 +47,63 @@ public class FABComponentFragment extends CustomFragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // Exibe o conteudo atualizado
+        showContent();
+    }
+
+    @Override
     public void onEditOptionSelected(int which) {
         if (which == 0) {
-            setColor();
+            DemoFragment.getInstance().selectColor();
         } else if (which == 1) {
-            setSize();
-        } else if (which == 2) {
-            Toast.makeText(getContext(), "3", Toast.LENGTH_SHORT).show();
+            DemoFragment.getInstance().selectSize();
         }
     }
 
-    public void setColor() {
-        int color = R.color.black;
-        fabDemo.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(color)));
+    @Override
+    public void setColor(int color) {
+        // Guarda o valor global
+        this.color = color;
+
+        // Altera o botao se estiver na tela
+        if (isVisible()) {
+            showContent();
+        }
     }
 
-    public void setSize() {
-        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.dialog_size, null);
+    @Override
+    public void setSize(int height, int width) {
+        // Guarda os valores globais
+        this.width = width;
+        this.height = height;
 
-        final MarkerSeekBar sekWidth = (MarkerSeekBar) view.findViewById(R.id.sekWidth);
-        final MarkerSeekBar sekHeight = (MarkerSeekBar) view.findViewById(R.id.sekHeight);
-        final TextView txtWidth = (TextView) view.findViewById(R.id.txtWidth);
-        final TextView txtHeight = (TextView) view.findViewById(R.id.txtHeight);
+        // Altera o botao se estiver na tela
+        if (isVisible()) {
+            showContent();
+        }
+    }
 
-        sekWidth.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+    public void showContent() {
+        // Adiciona as linhas alternativas
+        if (height != -1 && width != -1) {
+            // Altera o tamanho do botao
+            FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(width, height);
+            layoutParams.gravity = Gravity.CENTER;
+            fabDemo.setLayoutParams(layoutParams);
+        }
+        if (color != -1) {
+            // Altera a cor do componente
+            fabDemo.setBackgroundTintList(ColorStateList.valueOf(color));
+        }
+    }
 
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                txtWidth.setText(seekBar.getProgress() + "dp");
-            }
-        });
-
-        sekHeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                txtHeight.setText(seekBar.getProgress() + "dp");
-            }
-        });
-
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
-        dialog.setView(view);
-        dialog.setNeutralButton(R.string.text_apply, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                int width = sekWidth.getProgress();
-                int height = sekHeight.getProgress();
-
-                FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(width, height);
-                layoutParams.gravity = Gravity.CENTER;
-
-                fabDemo.setLayoutParams(layoutParams);
-            }
-        });
-        dialog.show();
+    @Override
+    public void resetProps() {
+        color = width = height = -1;
     }
 
 }

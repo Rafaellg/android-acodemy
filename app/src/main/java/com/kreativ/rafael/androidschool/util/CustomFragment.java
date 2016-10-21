@@ -6,42 +6,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kreativ.rafael.androidschool.CustomFragmentInterface;
-import com.kreativ.rafael.androidschool.R;
-
 /**
  * Modelo de fragmento para os demos
  */
-public class CustomFragment extends Fragment implements CustomFragmentInterface {
+public class CustomFragment extends Fragment {
 
     public CustomFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fab_component, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {return null;}
 
-        return view;
-    }
+    public void onEditOptionSelected(int which) {}
 
-    @Override
-    public void onEditOptionSelected(int which) {
+    public void setColor(int color) {}
 
-    }
+    public void setSize(int height, int width) {}
 
-    @Override
-    public void setColor(int color) {
+    public void setIcon(int drawable) {}
 
-    }
-
-    @Override
-    public void setSize(int h, int w) {
-
-    }
-
-    @Override
-    public void setIcon(int drawable) {
-
-    }
+    public void resetProps() {}
 }

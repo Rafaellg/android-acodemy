@@ -5,12 +5,10 @@
     tools:context=".fragment.category.buttom.SimpleButtonComponentFragment"
     android:background="@color/bgPrimaryColor">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/text_btn_click"
         android:id="@+id/btnDemo"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"/>
 </FrameLayout>
