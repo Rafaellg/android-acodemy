@@ -19,20 +19,20 @@ import io.github.kbiakov.codeview.views.DiffModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
-public class SimpleButtonXMLFragment extends CustomFragment {
+public class SBXMLFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
     private int width = -1, height = -1, color = -1;
 
-    public SimpleButtonXMLFragment() {
+    public SBXMLFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_button_xml, container, false);
+        View view = inflater.inflate(R.layout.fragment_codeview, container, false);
 
         // Declara o codeview
         codeView = (CodeView) view.findViewById(R.id.codeview);
@@ -76,15 +76,15 @@ public class SimpleButtonXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<Button\n");
-        codeList.add("android:id=\"@+id/btnDemo\"\n");
+        codeList.add("<Button");
+        codeList.add("android:id=\"@+id/btnDemo\"");
         if (width == -1) {
-            codeList.add("android:layout_width=\"wrap_content\"\n");
+            codeList.add("android:layout_width=\"wrap_content\"");
         }
         if (width == -1) {
-            codeList.add("android:layout_height=\"wrap_content\"\n");
+            codeList.add("android:layout_height=\"wrap_content\"");
         }
-        codeList.add("android:text=\""+ getResources().getString(R.string.text_btn_click) +"\"\n");
+        codeList.add("android:text=\""+ getResources().getString(R.string.text_press) +"\"");
         codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo
@@ -105,13 +105,13 @@ public class SimpleButtonXMLFragment extends CustomFragment {
 
         // Adiciona as linhas alternativas
         if (width != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_width=\"" + width + "dp\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_width=\"" + width + "dp\"", true));
         }
         if (height != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_height=\"" + height + "dp\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_height=\"" + height + "dp\"", true));
         }
         if (color != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:backgroundTint=\"" + Util.getHexFromIntColor(color) + "\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:backgroundTint=\"" + Util.getHexFromIntColor(color) + "\"", true));
         }
     }
 

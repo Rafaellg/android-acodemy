@@ -6,27 +6,23 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
 import com.kreativ.rafael.androidschool.util.Util;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import io.github.kbiakov.codeview.CodeView;
-import io.github.kbiakov.codeview.OnCodeLineClickListener;
 
-public class SimpleButtonCodeFragment extends CustomFragment {
+public class RBCodeFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
 
-    public SimpleButtonCodeFragment() {
+    public RBCodeFragment() {
         // Required empty public constructor
     }
 
@@ -37,16 +33,10 @@ public class SimpleButtonCodeFragment extends CustomFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_button_code, container, false);
+        View view = inflater.inflate(R.layout.fragment_codeview, container, false);
 
         // Declara o codeview
         codeView = (CodeView) view.findViewById(R.id.codeview);
-        codeView.setCodeListener(new OnCodeLineClickListener() {
-            @Override
-            public void onCodeLineClicked(int n, @NotNull String line) {
-                Toast.makeText(getContext(), (n + 1) + " line clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         return view;
     }
@@ -59,27 +49,31 @@ public class SimpleButtonCodeFragment extends CustomFragment {
         showContent();
     }
 
-    @Override
-    public void setColor(int color) {
-        // Nao altera o Java
-    }
-
-    @Override
-    public void setSize(int height, int width) {
-        // Nao altera o Java
-    }
-
     public void showContent() {
         // Cria a lista das linhas de codigo
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("Button btnDemo = (Button) findViewById(R.id.btnDemo);\n");
-        codeList.add("btnDemo.setOnClickListener(new View.OnClickListener() {\n");
-        codeList.add("\t\t@Override\n");
-        codeList.add("\t\tpublic void onClick(View v) {\n");
-        codeList.add("\t\t\t\tToast.makeText(getContext(), \"Button clicked!\", Toast.LENGTH_SHORT).show();\n");
-        codeList.add("\t\t}\n");
+        codeList.add("radioDemo1 = (RadioButton) view.findViewById(R.id.radioDemo1);");
+        codeList.add("radioDemo1.setOnClickListener(new View.OnClickListener() {");
+        codeList.add("\t\t@Override");
+        codeList.add("\t\tpublic void onClick(View view) {");
+        codeList.add("\t\t\t\tif (radioDemo1.isChecked()) {");
+        codeList.add("\t\t\t\t\t\tradioDemo2.setChecked(false);");
+        codeList.add("\t\t\t\t}");
+        codeList.add("\t\t}");
+        codeList.add("});");
+
+        codeList.add("");
+
+        codeList.add("radioDemo2 = (RadioButton) view.findViewById(R.id.radioDemo2);");
+        codeList.add("radioDemo2.setOnClickListener(new View.OnClickListener() {");
+        codeList.add("\t\t@Override");
+        codeList.add("\t\tpublic void onClick(View view) {");
+        codeList.add("\t\t\t\tif (radioDemo2.isChecked()) {");
+        codeList.add("\t\t\t\t\t\tradioDemo1.setChecked(false);");
+        codeList.add("\t\t\t\t}");
+        codeList.add("\t\t}");
         codeList.add("});");
 
         // Atualiza o codigo
@@ -87,10 +81,4 @@ public class SimpleButtonCodeFragment extends CustomFragment {
         codeView.highlightCode(Util.getDefaultCodeLanguage());
         codeView.setCodeContent(Util.getStringFromCodeList(codeList));
     }
-
-    @Override
-    public void resetProps() {
-        // Sem props
-    }
-
 }

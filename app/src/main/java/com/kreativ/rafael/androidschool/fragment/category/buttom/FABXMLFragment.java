@@ -32,7 +32,7 @@ public class FABXMLFragment extends CustomFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fab_xml, container, false);
+        View view = inflater.inflate(R.layout.fragment_codeview, container, false);
 
         // Declara o codeview
         codeView = (CodeView) view.findViewById(R.id.codeview);
@@ -76,15 +76,15 @@ public class FABXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<android.support.design.widget.FloatingActionButton\n");
-        codeList.add("android:id=\"@+id/fabDemo\"\n");
+        codeList.add("<android.support.design.widget.FloatingActionButton");
+        codeList.add("android:id=\"@+id/fabDemo\"");
         if (width == -1) {
-            codeList.add("android:layout_width=\"wrap_content\"\n");
+            codeList.add("android:layout_width=\"wrap_content\"");
         }
         if (width == -1) {
-            codeList.add("android:layout_height=\"wrap_content\"\n");
+            codeList.add("android:layout_height=\"wrap_content\"");
         }
-        codeList.add("android:src=\"@drawable/ic_touch_app_white_24dp\"\n");
+        codeList.add("android:src=\"@drawable/ic_touch_app_white_24dp\"");
         codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo

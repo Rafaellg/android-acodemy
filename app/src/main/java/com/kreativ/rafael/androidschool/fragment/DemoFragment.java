@@ -136,7 +136,9 @@ public class DemoFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        inflater.inflate(R.menu.fragment_demo_menu, menu);
+        if (enumComponent.getProperties().length != 0) {
+            inflater.inflate(R.menu.fragment_demo_menu, menu);
+        }
     }
 
     @Override

@@ -14,12 +14,12 @@ import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
 
-public class SimpleButtonComponentFragment extends CustomFragment {
+public class SBComponentFragment extends CustomFragment {
 
     private Button btnDemo;
     private int color = -1, width = -1, height = -1;
 
-    public SimpleButtonComponentFragment() {
+    public SBComponentFragment() {
         // Required empty public constructor
     }
 
@@ -32,13 +32,13 @@ public class SimpleButtonComponentFragment extends CustomFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_simple_button_component, container, false);
+        View view = inflater.inflate(R.layout.fragment_sb_component, container, false);
 
         btnDemo = (Button) view.findViewById(R.id.btnDemo);
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Button clicked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getString(R.string.text_pressed), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -40,7 +40,7 @@ public class FABComponentFragment extends CustomFragment {
         fabDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Button clicked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getString(R.string.text_pressed), Toast.LENGTH_SHORT).show();
             }
         });
 

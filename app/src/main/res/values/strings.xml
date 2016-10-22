@@ -9,7 +9,10 @@
     <string name="title_dialog_edit">Editar</string>
 
     <!-- OTHERS -->
-    <string name="text_btn_click">Pressione</string>
+    <string name="text_press">Pressione</string>
+    <string name="text_pressed">Botão pressionado!</string>
+    <string name="text_option_1">Opção 1</string>
+    <string name="text_option_2">Opção 2</string>
 
     <!-- PROPERTIES -->
     <string name="prop_color">Cor</string>

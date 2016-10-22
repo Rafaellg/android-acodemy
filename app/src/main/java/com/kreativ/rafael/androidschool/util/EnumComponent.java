@@ -5,17 +5,20 @@ import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABCodeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABComponentFragment;
 import com.kreativ.rafael.androidschool.fragment.category.buttom.FABXMLFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonCodeFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonComponentFragment;
-import com.kreativ.rafael.androidschool.fragment.category.buttom.SimpleButtonXMLFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.RBCodeFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.RBComponentFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.RBXMLFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.SBCodeFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.SBComponentFragment;
+import com.kreativ.rafael.androidschool.fragment.category.buttom.SBXMLFragment;
 
 /**
  * Created by Rafael on 20/09/2016.
  */
 public enum EnumComponent {
-    BtnSimple(ApplicationMain.getContext().getString(R.string.item_simple_btn), new SimpleButtonComponentFragment(), new SimpleButtonCodeFragment(), new SimpleButtonXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    BtnSimple(ApplicationMain.getContext().getString(R.string.item_simple_btn), new SBComponentFragment(), new SBCodeFragment(), new SBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
     BtnFAB(ApplicationMain.getContext().getString(R.string.item_floating_btn), new FABComponentFragment(), new FABCodeFragment(), new FABXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    BtnRadio(ApplicationMain.getContext().getString(R.string.item_radio_btn), new FABComponentFragment(), new FABCodeFragment(), new FABXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    BtnRadio(ApplicationMain.getContext().getString(R.string.item_radio_btn), new RBComponentFragment(), new RBCodeFragment(), new RBXMLFragment(), new String[] {}),
     BtnToggle(ApplicationMain.getContext().getString(R.string.item_toggle_btn), new FABComponentFragment(), new FABCodeFragment(), new FABXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
     BtnImage(ApplicationMain.getContext().getString(R.string.item_image_btn), new FABComponentFragment(), new FABCodeFragment(), new FABXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)});
 

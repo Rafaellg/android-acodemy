@@ -30,8 +30,9 @@ public class Util {
     public static String getStringFromCodeList(List<String> codeList) {
         String code = "";
 
-        for (String line : codeList) {
-            code += line;
+        for (int i = 0; i < codeList.size(); i++) {
+            String line = codeList.get(i);
+            code += i != codeList.size()-1 ? line + "\n" : line;
         }
 
         return code;
