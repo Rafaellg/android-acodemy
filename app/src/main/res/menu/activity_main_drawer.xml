@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/cat_title">
+    <group>
+        <item
+            android:id="@+id/menu_home"
+            android:title="@string/title_home"/>
+
+        <item
+            android:id="@+id/menu_intro"
+            android:title="@string/title_intro"/>
+    </group>
+
+    <item android:title="@string/title_cat">
         <menu>
             <item
-                android:id="@+id/cat_buttom"
-                android:title="@string/cat_buttom" />
+                android:id="@+id/menu_cat_widgets"
+                android:title="@string/title_cat_widgets"
+                android:icon="@drawable/ic_layers_black_24dp" />
             <item
-                android:id="@+id/cat_list"
-                android:title="@string/cat_list" />
+                android:id="@+id/menu_cat_text_fields"
+                android:title="@string/title_cat_text_fields"
+                android:icon="@drawable/ic_font_download_black_24dp" />
             <item
-                android:id="@+id/cat_layout"
-                android:title="@string/cat_layout" />
+                android:id="@+id/menu_cat_layouts"
+                android:title="@string/title_cat_layouts"
+                android:icon="@drawable/ic_view_compact_black_24dp" />
             <item
-                android:id="@+id/cat_progress_bar"
-                android:title="@string/cat_progress_bar" />
+                android:id="@+id/menu_cat_containers"
+                android:title="@string/title_cat_containers"
+                android:icon="@drawable/ic_toc_black_24dp"/>
             <item
-                android:id="@+id/cat_dialog"
-                android:title="@string/cat_dialog" />
+                android:id="@+id/menu_cat_image_media"
+                android:title="@string/title_cat_image_media"
+                android:icon="@drawable/ic_camera_alt_black_24dp"/>
             <item
-                android:id="@+id/cat_edittext"
-                android:title="@string/cat_edittext" />
-            <item
-                android:id="@+id/cat_textview"
-                android:title="@string/cat_textview" />
-            <item
-                android:id="@+id/cat_container"
-                android:title="@string/cat_container" />
+                android:id="@+id/menu_cat_date_time"
+                android:title="@string/title_cat_date_time"
+                android:icon="@drawable/ic_access_time_black_24dp"/>
         </menu>
     </item>
 

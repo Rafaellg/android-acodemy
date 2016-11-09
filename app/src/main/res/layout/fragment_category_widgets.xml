@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.DemoFragment"
+    android:background="@color/bgPrimaryColor">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/img_people_03_1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_normal">
+
+        <Button
+            android:text="@string/item_text_view"
+            android:id="@+id/btnTextView"
+            style="@style/AppTheme.Button" />
+
+        <Button
+            android:text="@string/item_simple_btn"
+            android:id="@+id/btnSimpleButton"
+            style="@style/AppTheme.Button" />
+
+        <Button
+            android:text="@string/item_floating_btn"
+            android:id="@+id/btnFloatActionButton"
+            style="@style/AppTheme.Button" />
+
+        <Button
+            android:text="@string/item_radio_btn"
+            android:id="@+id/btnRadioButton"
+            style="@style/AppTheme.Button" />
+
+        <Button
+            android:text="@string/item_toggle_btn"
+            android:id="@+id/btnToggleButton"
+            style="@style/AppTheme.Button" />
+
+    </LinearLayout>
+</RelativeLayout>

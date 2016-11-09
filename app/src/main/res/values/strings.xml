@@ -13,6 +13,10 @@
     <string name="text_pressed">Botão pressionado!</string>
     <string name="text_option_1">Opção 1</string>
     <string name="text_option_2">Opção 2</string>
+    <string name="text_on">LIGADO</string>
+    <string name="text_off">DESLIGADO</string>
+    <string name="text_hellow_world">Hello World!</string>
+    <string name="text_goodbye_world">Goodbye World!</string>
 
     <!-- PROPERTIES -->
     <string name="prop_color">Cor</string>
@@ -39,21 +43,47 @@
     <string name="text_width">Largura:</string>
     <string name="text_height">Altura:</string>
 
-    <!-- CATEGORIES -->
-    <string name="cat_title">Categorias</string>
-    <string name="cat_buttom">Botões</string>
-    <string name="cat_list">Listas</string>
-    <string name="cat_layout">Layouts</string>
-    <string name="cat_progress_bar">Barras de progresso</string>
-    <string name="cat_dialog">Dialog</string>
-    <string name="cat_edittext">EditText</string>
-    <string name="cat_textview">TextView</string>
-    <string name="cat_container">Containers</string>
+    <!-- DRAWER -->
+    <string name="title_home">Início</string>
+    <string name="title_intro">Introdução</string>
+    <string name="title_cat">Categorias</string>
+    <string name="title_cat_widgets">Widgets</string>
+    <string name="title_cat_text_fields">Text Fields</string>
+    <string name="title_cat_layouts">Layouts</string>
+    <string name="title_cat_containers">Containers</string>
+    <string name="title_cat_image_media">Image &amp; Media</string>
+    <string name="title_cat_date_time">Date &amp; Time</string>
 
-    <!-- BUTTOM CATEGORY -->
+    <!-- WIDGET CATEGORY -->
+    <string name="item_text_view">Text View</string>
     <string name="item_simple_btn">Simple Button</string>
     <string name="item_floating_btn">Floating Action Button</string>
     <string name="item_radio_btn">Radio Button</string>
     <string name="item_toggle_btn">Toggle Button</string>
+    <string name="item_spinner">Spinner</string>
+    <string name="item_progress_bar">ProgressBar</string>
+    <string name="item_seek_bar">SeekBar</string>
+
+    <!-- TEXT FIELDS CATEGORY -->
+    <string name="item_edit_text">Edit Text</string>
+
+    <!-- LAYOUTS CATEGORY -->
+    <string name="item_grid_layout">Grid Layout</string>
+    <string name="item_linear_layout">Linear Layout</string>
+    <string name="item_relative_layout">Relative Layout</string>
+    <string name="item_frame_layout">Frame Layout</string>
+
+    <!-- CONTAINERS CATEGORY -->
+    <string name="item_list_view">List View</string>
+    <string name="item_grid_view">Grid View</string>
+
+    <!-- IMAGES & MEDIA CATEGORY -->
     <string name="item_image_btn">Image Button</string>
+    <string name="item_image_view">Image View</string>
+    <string name="item_video_view">Video View</string>
+
+    <!-- DATE & TIME CATEGORY -->
+    <string name="item_time_picker">Time Picker</string>
+    <string name="item_date_picker">Date Picker</string>
+
 </resources>

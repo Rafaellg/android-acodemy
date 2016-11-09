@@ -1,5 +1,4 @@
-package com.kreativ.rafael.androidschool.fragment.category.buttom;
-
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

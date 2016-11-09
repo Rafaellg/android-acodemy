@@ -12,49 +12,42 @@ import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.EnumComponent;
 
-public class CategoryButtonFragment extends Fragment {
+public class CategoryLayoutsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category_button, container, false);
+        View view = inflater.inflate(R.layout.fragment_category_layouts, container, false);
 
         // Get buttons from screen
-        Button btnSimpleButton = (Button) view.findViewById(R.id.btnSimpleButton);
-        Button btnFloatingActionButton = (Button) view.findViewById(R.id.btnFloatActionButton);
-        Button btnRadioButton = (Button) view.findViewById(R.id.btnRadioButton);
-        Button btnToggleButton = (Button) view.findViewById(R.id.btnToggleButton);
-        Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
+        Button btnGridLayout = (Button) view.findViewById(R.id.btnGridLayout);
+        Button btnFrameLayout = (Button) view.findViewById(R.id.btnFrameLayout);
+        Button btnLinearLayout = (Button) view.findViewById(R.id.btnLinearLayout);
+        Button btnRelativeLayout = (Button) view.findViewById(R.id.btnRelativeLayout);
 
         // Set buttons click
-        btnSimpleButton.setOnClickListener(new View.OnClickListener() {
+        btnGridLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnSimple);
+                openFragment(EnumComponent.GridLayout);
             }
         });
-        btnFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+        btnFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnFAB);
+                openFragment(EnumComponent.FrameLayout);
             }
         });
-        btnRadioButton.setOnClickListener(new View.OnClickListener() {
+        btnLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnRadio);
+                openFragment(EnumComponent.LinearLayout);
             }
         });
-        btnToggleButton.setOnClickListener(new View.OnClickListener() {
+        btnRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnToggle);
-            }
-        });
-        btnImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFragment(EnumComponent.BtnImage);
+                openFragment(EnumComponent.RelativeLayout);
             }
         });
 
@@ -66,7 +59,7 @@ public class CategoryButtonFragment extends Fragment {
         super.onResume();
 
         // Define o título da activity
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.cat_buttom));
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_widgets));
     }
 
     public void openFragment(EnumComponent enumComponent) {

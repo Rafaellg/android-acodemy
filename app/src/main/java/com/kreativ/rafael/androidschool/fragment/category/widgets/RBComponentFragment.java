@@ -1,19 +1,13 @@
-package com.kreativ.rafael.androidschool.fragment.category.buttom;
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
-import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
 
 public class RBComponentFragment extends CustomFragment {

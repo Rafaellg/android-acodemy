@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.category.buttom.SBCodeFragment"
+    tools:context=".fragment.category.widgets.SBCodeFragment"
     android:background="@color/bgPrimaryColor">
 
     <io.github.kbiakov.codeview.CodeView

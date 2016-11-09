@@ -1,5 +1,4 @@
-package com.kreativ.rafael.androidschool.fragment.category.buttom;
-
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,14 +18,14 @@ import io.github.kbiakov.codeview.views.DiffModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
-public class FABXMLFragment extends CustomFragment {
+public class TBXMLFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
     private int width = -1, height = -1, color = -1;
 
-    public FABXMLFragment() {
+    public TBXMLFragment() {
         // Required empty public constructor
     }
 
@@ -76,15 +75,16 @@ public class FABXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<android.support.design.widget.FloatingActionButton");
-        codeList.add("android:id=\"@+id/fabDemo\"");
+        codeList.add("<ToggleButton");
+        codeList.add("android:id=\"@+id/toggleDemo\"");
         if (width == -1) {
             codeList.add("android:layout_width=\"wrap_content\"");
         }
         if (width == -1) {
             codeList.add("android:layout_height=\"wrap_content\"");
         }
-        codeList.add("android:src=\"@drawable/ic_touch_app_white_24dp\"");
+        codeList.add("android:textOn=\""+ getString(R.string.text_on) +"\"");
+        codeList.add("android:textOff=\""+ getString(R.string.text_off) +"\"");
         codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo
@@ -102,27 +102,16 @@ public class FABXMLFragment extends CustomFragment {
             }
         });
         codeView.setAdapter(diffsAdapter);
-        /*codeView.setCodeListener(new OnCodeLineClickListener() {
-            @Override
-            public void onCodeLineClicked(int n, @NotNull String line) {
-                Toast.makeText(getContext(), (n + 1) + " line clicked", Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
         // Adiciona as linhas alternativas
         if (width != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_width=\"" + width + "dp\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_width=\"" + width + "dp\"", true));
         }
         if (height != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_height=\"" + height + "dp\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_height=\"" + height + "dp\"", true));
         }
         if (color != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("app:backgroundTint=\"" + Util.getHexFromIntColor(color) + "\"\n", true));
+            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:backgroundTint=\"" + Util.getHexFromIntColor(color) + "\"", true));
         }
-    }
-
-    @Override
-    public void resetProps() {
-        color = width = height = -1;
     }
 }

@@ -13,7 +13,10 @@ import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.StartFragment;
-import com.kreativ.rafael.androidschool.fragment.category.CategoryButtonFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryImagesFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryLayoutsFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryTextFieldsFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryWidgetsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setElevation(0);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -90,25 +92,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cat_buttom) {
+        if (id == R.id.menu_cat_widgets) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, new CategoryButtonFragment())
+                    .replace(R.id.container, new CategoryWidgetsFragment())
                     .addToBackStack(null)
                     .commit();
-        } else if (id == R.id.cat_list) {
+        } else if (id == R.id.menu_cat_text_fields) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, new CategoryTextFieldsFragment())
+                    .addToBackStack(null)
+                    .commit();
+        } else if (id == R.id.menu_cat_layouts) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, new CategoryLayoutsFragment())
+                    .addToBackStack(null)
+                    .commit();
+        } else if (id == R.id.menu_cat_containers) {
             Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_layout) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_progress_bar) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_dialog) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_edittext) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_textview) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.cat_container) {
+        } else if (id == R.id.menu_cat_image_media) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, new CategoryImagesFragment())
+                    .addToBackStack(null)
+                    .commit();
+        } else if (id == R.id.menu_cat_date_time) {
             Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
         }
 

@@ -1,8 +1,6 @@
-package com.kreativ.rafael.androidschool.fragment.category.buttom;
-
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,19 +14,14 @@ import java.util.List;
 
 import io.github.kbiakov.codeview.CodeView;
 
-public class RBCodeFragment extends CustomFragment {
+public class TVXMLFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
 
-    public RBCodeFragment() {
+    public TVXMLFragment() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -54,27 +47,25 @@ public class RBCodeFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("radioDemo1 = (RadioButton) view.findViewById(R.id.radioDemo1);");
-        codeList.add("radioDemo1.setOnClickListener(new View.OnClickListener() {");
-        codeList.add("\t\t@Override");
-        codeList.add("\t\tpublic void onClick(View view) {");
-        codeList.add("\t\t\t\tif (radioDemo1.isChecked()) {");
-        codeList.add("\t\t\t\t\t\tradioDemo2.setChecked(false);");
-        codeList.add("\t\t\t\t}");
-        codeList.add("\t\t}");
-        codeList.add("});");
+        codeList.add("<RadioButton");
+        codeList.add("android:id=\"@+id/radioDemo1\"");
+        codeList.add("android:layout_width=\"wrap_content\"");
+        codeList.add("android:layout_height=\"wrap_content\"");
+        codeList.add("android:text=\""+ getString(R.string.text_option_1) +"\"");
+        codeList.add("android:textColor=\"#ffffff\"");
+        codeList.add("android:buttonTint=\"#ffffff\"");
+        codeList.add("android:layout_gravity=\"center\"/>");
 
         codeList.add("");
 
-        codeList.add("radioDemo2 = (RadioButton) view.findViewById(R.id.radioDemo2);");
-        codeList.add("radioDemo2.setOnClickListener(new View.OnClickListener() {");
-        codeList.add("\t\t@Override");
-        codeList.add("\t\tpublic void onClick(View view) {");
-        codeList.add("\t\t\t\tif (radioDemo2.isChecked()) {");
-        codeList.add("\t\t\t\t\t\tradioDemo1.setChecked(false);");
-        codeList.add("\t\t\t\t}");
-        codeList.add("\t\t}");
-        codeList.add("});");
+        codeList.add("<RadioButton");
+        codeList.add("android:id=\"@+id/radioDemo2\"");
+        codeList.add("android:layout_width=\"wrap_content\"");
+        codeList.add("android:layout_height=\"wrap_content\"");
+        codeList.add("android:text=\""+ getString(R.string.text_option_2) +"\"");
+        codeList.add("android:textColor=\"#ffffff\"");
+        codeList.add("android:buttonTint=\"#ffffff\"");
+        codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo
         codeView.setColorTheme(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));

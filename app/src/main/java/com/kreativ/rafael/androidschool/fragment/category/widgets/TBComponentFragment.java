@@ -1,25 +1,26 @@
-package com.kreativ.rafael.androidschool.fragment.category.buttom;
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.CustomFragment;
 
-public class SBComponentFragment extends CustomFragment {
+public class TBComponentFragment extends CustomFragment {
 
-    private Button btnDemo;
+    private ToggleButton toggleDemo;
     private int color = -1, width = -1, height = -1;
 
-    public SBComponentFragment() {
+    public TBComponentFragment() {
         // Required empty public constructor
     }
 
@@ -32,13 +33,17 @@ public class SBComponentFragment extends CustomFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sb_component, container, false);
+        View view = inflater.inflate(R.layout.fragment_tb_component, container, false);
 
-        btnDemo = (Button) view.findViewById(R.id.btnDemo);
-        btnDemo.setOnClickListener(new View.OnClickListener() {
+        toggleDemo = (ToggleButton) view.findViewById(R.id.toggleDemo);
+        toggleDemo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), getString(R.string.text_pressed), Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                if (toggleDemo.isChecked()) {
+                    Toast.makeText(getContext(), getString(R.string.text_on), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), getString(R.string.text_off), Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -91,11 +96,11 @@ public class SBComponentFragment extends CustomFragment {
             // Altera o tamanho do botao
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(width, height);
             layoutParams.gravity = Gravity.CENTER;
-            btnDemo.setLayoutParams(layoutParams);
+            toggleDemo.setLayoutParams(layoutParams);
         }
         if (color != -1) {
             // Altera a cor do componente
-            btnDemo.setBackgroundColor(color);
+            toggleDemo.setBackgroundTintList(ColorStateList.valueOf(color));
         }
     }
 

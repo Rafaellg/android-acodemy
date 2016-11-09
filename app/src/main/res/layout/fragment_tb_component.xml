@@ -5,11 +5,12 @@
     tools:context=".fragment.category.widgets.SBComponentFragment"
     android:background="@color/bgPrimaryColor">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabDemo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_touch_app_white_24dp"
-        android:layout_gravity="center" />
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleDemo"
+            android:layout_gravity="center"
+            android:textOn="@string/text_on"
+            android:textOff="@string/text_off" />
 
 </FrameLayout>
