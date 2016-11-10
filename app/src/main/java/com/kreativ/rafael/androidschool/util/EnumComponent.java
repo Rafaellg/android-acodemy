@@ -2,6 +2,9 @@ package com.kreativ.rafael.androidschool.util;
 
 import com.kreativ.rafael.androidschool.ApplicationMain;
 import com.kreativ.rafael.androidschool.R;
+import com.kreativ.rafael.androidschool.fragment.category.textfields.ETCodeFragment;
+import com.kreativ.rafael.androidschool.fragment.category.textfields.ETComponentFragment;
+import com.kreativ.rafael.androidschool.fragment.category.textfields.ETXMLFragment;
 import com.kreativ.rafael.androidschool.fragment.category.widgets.FABCodeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.widgets.FABComponentFragment;
 import com.kreativ.rafael.androidschool.fragment.category.widgets.FABXMLFragment;
@@ -26,36 +29,36 @@ import com.kreativ.rafael.androidschool.fragment.category.widgets.TVXMLFragment;
  */
 public enum EnumComponent {
     // Widgets
-    TextView(ApplicationMain.getContext().getString(R.string.item_text_view), new TVComponentFragment(), new TVCodeFragment(), new TVXMLFragment(), new String[] {}),
+    TextView(ApplicationMain.getContext().getString(R.string.item_text_view), new TVComponentFragment(), new TVCodeFragment(), new TVXMLFragment(), null),
     BtnSimple(ApplicationMain.getContext().getString(R.string.item_simple_btn), new SBComponentFragment(), new SBCodeFragment(), new SBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
     BtnFAB(ApplicationMain.getContext().getString(R.string.item_floating_btn), new FABComponentFragment(), new FABCodeFragment(), new FABXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    BtnRadio(ApplicationMain.getContext().getString(R.string.item_radio_btn), new RBComponentFragment(), new RBCodeFragment(), new RBXMLFragment(), new String[] {}),
+    BtnRadio(ApplicationMain.getContext().getString(R.string.item_radio_btn), new RBComponentFragment(), new RBCodeFragment(), new RBXMLFragment(), null),
     BtnToggle(ApplicationMain.getContext().getString(R.string.item_toggle_btn), new TBComponentFragment(), new TBCodeFragment(), new TBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    Spinner(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    ProgressBar(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    SeekBar(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    Spinner(ApplicationMain.getContext().getString(R.string.item_spinner), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    ProgressBar(ApplicationMain.getContext().getString(R.string.item_progress_bar), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    SeekBar(ApplicationMain.getContext().getString(R.string.item_seek_bar), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
 
     // Text Fields
-    EditText(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    EditText(ApplicationMain.getContext().getString(R.string.item_edit_text), new ETComponentFragment(), new ETCodeFragment(), new ETXMLFragment(), null),
 
     // Layouts
-    GridLayout(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    FrameLayout(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    LinearLayout(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    RelativeLayout(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    GridLayout(ApplicationMain.getContext().getString(R.string.item_grid_layout), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    FrameLayout(ApplicationMain.getContext().getString(R.string.item_frame_layout), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    LinearLayout(ApplicationMain.getContext().getString(R.string.item_linear_layout), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    RelativeLayout(ApplicationMain.getContext().getString(R.string.item_relative_layout), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
 
     // Containers
-    ListView(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    GridView(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    ListView(ApplicationMain.getContext().getString(R.string.item_list_view), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    RecyclerView(ApplicationMain.getContext().getString(R.string.item_recycler_view), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
 
     // Images & Media
-    BtnImage(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    ImageView(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    VideoView(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
+    BtnImage(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    ImageView(ApplicationMain.getContext().getString(R.string.item_image_view), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    VideoView(ApplicationMain.getContext().getString(R.string.item_video_view), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
 
     // Images & Media
-    TimePicker(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)}),
-    DatePicker(ApplicationMain.getContext().getString(R.string.item_image_btn), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), new String[] {ApplicationMain.getContext().getString(R.string.prop_color), ApplicationMain.getContext().getString(R.string.prop_size)});
+    TimePicker(ApplicationMain.getContext().getString(R.string.item_time_picker), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null),
+    DatePicker(ApplicationMain.getContext().getString(R.string.item_date_picker), new IBComponentFragment(), new IBCodeFragment(), new IBXMLFragment(), null);
 
     private String title;
     private String[] properties;

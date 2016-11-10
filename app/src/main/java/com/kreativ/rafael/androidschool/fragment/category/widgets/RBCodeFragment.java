@@ -65,7 +65,7 @@ public class RBCodeFragment extends CustomFragment {
 
         codeList.add("");
 
-        codeList.add("radioDemo2 = (RadioButton) view.findViewById(R.id.radioDemo2);");
+        codeList.add("RadioButton radioDemo2 = (RadioButton) view.findViewById(R.id.radioDemo2);");
         codeList.add("radioDemo2.setOnClickListener(new View.OnClickListener() {");
         codeList.add("\t\t@Override");
         codeList.add("\t\tpublic void onClick(View view) {");

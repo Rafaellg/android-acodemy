@@ -1,4 +1,4 @@
-package com.kreativ.rafael.androidschool.fragment.category.widgets;
+package com.kreativ.rafael.androidschool.fragment.category.textfields;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,13 +15,13 @@ import java.util.List;
 
 import io.github.kbiakov.codeview.CodeView;
 
-public class TVCodeFragment extends CustomFragment {
+public class ETCodeFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
 
-    public TVCodeFragment() {
+    public ETCodeFragment() {
         // Required empty public constructor
     }
 
@@ -53,13 +53,28 @@ public class TVCodeFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("TextView textViewDemo = (TextView) view.findViewById(R.id.textViewDemo);");
-        codeList.add("textViewDemo.setOnClickListener(new View.OnClickListener() {");
+        codeList.add("EditText editTextDemo = (EditText) findViewById(R.id.editTextDemo);");
+
+        codeList.add("");
+
+        codeList.add("Button buttonDemo = (Button) view.findViewById(R.id.buttonDemo);");
+        codeList.add("buttonDemo.setOnClickListener(new View.OnClickListener() {");
         codeList.add("\t\t@Override");
         codeList.add("\t\tpublic void onClick(View view) {");
-        codeList.add("\t\t\t\ttextViewDemo.setText(\""+getString(R.string.text_goodbye_world)+"\");");
+        codeList.add("\t\t\t\tif (!editTextDemo.getText().toString().equals(\"\"))  {");
+        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), editTextDemo.getText(), Toast.LENGTH_SHORT).show();");
+        codeList.add("\t\t\t\t} else {");
+        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), \"" + getString(R.string.text_empty) + "\", Toast.LENGTH_SHORT).show();");
+        codeList.add("\t\t\t\t}");
         codeList.add("\t\t}");
         codeList.add("});");
+
+        /*
+                if (!editTextDemo.getText().toString().equals(""))  {
+                    Toast.makeText(getContext(), editTextDemo.getText(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), getString(R.string.text_empty), Toast.LENGTH_SHORT).show();
+                }*/
 
         // Atualiza o codigo
         codeView.setColorTheme(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));

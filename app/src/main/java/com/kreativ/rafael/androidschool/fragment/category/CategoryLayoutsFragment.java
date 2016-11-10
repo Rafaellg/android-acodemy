@@ -59,7 +59,7 @@ public class CategoryLayoutsFragment extends Fragment {
         super.onResume();
 
         // Define o título da activity
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_widgets));
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_layouts));
     }
 
     public void openFragment(EnumComponent enumComponent) {

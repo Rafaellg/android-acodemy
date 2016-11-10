@@ -12,21 +12,28 @@ import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.EnumComponent;
 
-public class CategoryImagesFragment extends Fragment {
+public class CategoryDateTimeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category_image_media, container, false);
+        View view = inflater.inflate(R.layout.fragment_category_containers, container, false);
 
         // Get buttons from screen
-        Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
+        Button btnTimePicker = (Button) view.findViewById(R.id.btnTimePicker);
+        Button btnDatePicker = (Button) view.findViewById(R.id.btnDatePicker);
 
         // Set buttons click
-        btnImageButton.setOnClickListener(new View.OnClickListener() {
+        btnTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnImage);
+                openFragment(EnumComponent.TimePicker);
+            }
+        });
+        btnDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment(EnumComponent.DatePicker);
             }
         });
 
@@ -38,7 +45,7 @@ public class CategoryImagesFragment extends Fragment {
         super.onResume();
 
         // Define o título da activity
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_image_media));
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_date_time));
     }
 
     public void openFragment(EnumComponent enumComponent) {

@@ -12,21 +12,28 @@ import com.kreativ.rafael.androidschool.activity.MainActivity;
 import com.kreativ.rafael.androidschool.fragment.DemoFragment;
 import com.kreativ.rafael.androidschool.util.EnumComponent;
 
-public class CategoryImagesFragment extends Fragment {
+public class CategoryContainersFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category_image_media, container, false);
+        View view = inflater.inflate(R.layout.fragment_category_containers, container, false);
 
         // Get buttons from screen
-        Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
+        Button btnListView = (Button) view.findViewById(R.id.btnListView);
+        Button btnRecyclerView = (Button) view.findViewById(R.id.btnRecyclerView);
 
         // Set buttons click
-        btnImageButton.setOnClickListener(new View.OnClickListener() {
+        btnListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.BtnImage);
+                openFragment(EnumComponent.ListView);
+            }
+        });
+        btnRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment(EnumComponent.RecyclerView);
             }
         });
 
@@ -38,7 +45,7 @@ public class CategoryImagesFragment extends Fragment {
         super.onResume();
 
         // Define o título da activity
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_image_media));
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.title_cat_containers));
     }
 
     public void openFragment(EnumComponent enumComponent) {

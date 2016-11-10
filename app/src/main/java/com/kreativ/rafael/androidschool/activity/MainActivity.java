@@ -2,6 +2,7 @@ package com.kreativ.rafael.androidschool.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import com.kreativ.rafael.androidschool.R;
 import com.kreativ.rafael.androidschool.fragment.StartFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryContainersFragment;
+import com.kreativ.rafael.androidschool.fragment.category.CategoryDateTimeFragment;
 import com.kreativ.rafael.androidschool.fragment.category.CategoryImagesFragment;
 import com.kreativ.rafael.androidschool.fragment.category.CategoryLayoutsFragment;
 import com.kreativ.rafael.androidschool.fragment.category.CategoryTextFieldsFragment;
@@ -53,83 +56,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-//    @Override
-//    public boolean onEditOptionSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_github) {
-//            // Redirect to github project
-//            String url = "https://github.com/Rafaellg/android-school-app";
-//            Intent intent = new Intent(Intent.ACTION_VIEW);
-//            intent.setData(Uri.parse(url));
-//            startActivity(intent);
-//
-//            return true;
-//        } else if (id == R.id.action_about) {
-//            Intent intent = new Intent(this, AboutActivity.class);
-//            startActivity(intent);
-//
-//            return true;
-//        }
-//
-//        return true;
-//    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Recupera o item selecionado
         int id = item.getItemId();
 
+        // Seleciona o fragment do item
+        Fragment fragment = null;
         if (id == R.id.menu_cat_widgets) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, new CategoryWidgetsFragment())
-                    .addToBackStack(null)
-                    .commit();
+            fragment = new CategoryWidgetsFragment();
         } else if (id == R.id.menu_cat_text_fields) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, new CategoryTextFieldsFragment())
-                    .addToBackStack(null)
-                    .commit();
+            fragment = new CategoryTextFieldsFragment();
         } else if (id == R.id.menu_cat_layouts) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, new CategoryLayoutsFragment())
-                    .addToBackStack(null)
-                    .commit();
+            fragment = new CategoryLayoutsFragment();
         } else if (id == R.id.menu_cat_containers) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+            fragment = new CategoryContainersFragment();
         } else if (id == R.id.menu_cat_image_media) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, new CategoryImagesFragment())
-                    .addToBackStack(null)
-                    .commit();
+            fragment = new CategoryImagesFragment();
         } else if (id == R.id.menu_cat_date_time) {
-            Toast.makeText(this,"Em desenvolvimento", Toast.LENGTH_SHORT).show();
+            fragment = new CategoryDateTimeFragment();
         }
 
+        // Exibe o fragment do item
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+        // Fecha o drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
     }
 }

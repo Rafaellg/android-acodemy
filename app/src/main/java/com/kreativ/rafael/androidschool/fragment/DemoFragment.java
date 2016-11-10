@@ -32,9 +32,6 @@ public class DemoFragment extends Fragment {
     private static DemoFragment instance;
     private EnumComponent enumComponent;
 
-    // Atributos
-    private int color, width, height;
-
     public DemoFragment() {
         // Required empty public constructor
     }
@@ -136,7 +133,7 @@ public class DemoFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        if (enumComponent.getProperties().length != 0) {
+        if (enumComponent.getProperties() != null) {
             inflater.inflate(R.menu.fragment_demo_menu, menu);
         }
     }

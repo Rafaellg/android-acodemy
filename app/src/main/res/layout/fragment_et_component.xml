@@ -1,0 +1,37 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.category.widgets.SBComponentFragment"
+    android:background="@color/bgPrimaryColor">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextDemo"
+            android:hint="@string/text_full_name"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            android:textColorHint="@color/hint_foreground_material_dark"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="@string/text_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDemo"
+            android:layout_weight="1"
+            android:layout_marginTop="32dp" />
+    </LinearLayout>
+
+</FrameLayout>

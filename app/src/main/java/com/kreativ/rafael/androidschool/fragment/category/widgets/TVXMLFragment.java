@@ -47,24 +47,13 @@ public class TVXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<RadioButton");
-        codeList.add("android:id=\"@+id/radioDemo1\"");
+        codeList.add("<TextView");
+        codeList.add("android:id=\"@+id/textViewDemo\"");
         codeList.add("android:layout_width=\"wrap_content\"");
         codeList.add("android:layout_height=\"wrap_content\"");
-        codeList.add("android:text=\""+ getString(R.string.text_option_1) +"\"");
+        codeList.add("android:text=\""+ getString(R.string.text_hellow_world) +"\"");
         codeList.add("android:textColor=\"#ffffff\"");
-        codeList.add("android:buttonTint=\"#ffffff\"");
-        codeList.add("android:layout_gravity=\"center\"/>");
-
-        codeList.add("");
-
-        codeList.add("<RadioButton");
-        codeList.add("android:id=\"@+id/radioDemo2\"");
-        codeList.add("android:layout_width=\"wrap_content\"");
-        codeList.add("android:layout_height=\"wrap_content\"");
-        codeList.add("android:text=\""+ getString(R.string.text_option_2) +"\"");
-        codeList.add("android:textColor=\"#ffffff\"");
-        codeList.add("android:buttonTint=\"#ffffff\"");
+        codeList.add("android:textSize=\"20sp\"");
         codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo

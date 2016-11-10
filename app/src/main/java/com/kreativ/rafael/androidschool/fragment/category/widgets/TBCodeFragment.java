@@ -58,9 +58,9 @@ public class TBCodeFragment extends CustomFragment {
         codeList.add("\t\t@Override");
         codeList.add("\t\tpublic void onClick(View view) {");
         codeList.add("\t\t\t\tif (toggleDemo.isChecked()) {");
-        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), getString(R.string.text_on), Toast.LENGTH_SHORT).show();");
+        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), \""+ getString(R.string.text_on) +"\", Toast.LENGTH_SHORT).show();");
         codeList.add("\t\t\t\t} else {");
-        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), getString(R.string.text_off), Toast.LENGTH_SHORT).show();");
+        codeList.add("\t\t\t\t\t\tToast.makeText(getApplicationContext(), \""+ getString(R.string.text_off) +"\", Toast.LENGTH_SHORT).show();");
         codeList.add("\t\t\t\t}");
         codeList.add("\t\t}");
         codeList.add("});");

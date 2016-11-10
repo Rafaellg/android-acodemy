@@ -17,6 +17,9 @@
     <string name="text_off">DESLIGADO</string>
     <string name="text_hellow_world">Hello World!</string>
     <string name="text_goodbye_world">Goodbye World!</string>
+    <string name="text_full_name">Nome Completo</string>
+    <string name="text_show">Exibir</string>
+    <string name="text_empty">Vazio</string>
 
     <!-- PROPERTIES -->
     <string name="prop_color">Cor</string>
@@ -75,7 +78,7 @@
 
     <!-- CONTAINERS CATEGORY -->
     <string name="item_list_view">List View</string>
-    <string name="item_grid_view">Grid View</string>
+    <string name="item_recycler_view">Recycler View</string>
 
     <!-- IMAGES & MEDIA CATEGORY -->
     <string name="item_image_btn">Image Button</string>
