@@ -21,12 +21,26 @@ public class CategoryImagesFragment extends Fragment {
 
         // Get buttons from screen
         Button btnImageButton = (Button) view.findViewById(R.id.btnImageButton);
+        Button btnImageView = (Button) view.findViewById(R.id.btnImageView);
+        Button btnVideoView = (Button) view.findViewById(R.id.btnVideoView);
 
         // Set buttons click
         btnImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFragment(EnumComponent.BtnImage);
+            }
+        });
+        btnImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment(EnumComponent.ImageView);
+            }
+        });
+        btnVideoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment(EnumComponent.VideoView);
             }
         });
 

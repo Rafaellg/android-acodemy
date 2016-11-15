@@ -42,8 +42,10 @@ public class DemoFragment extends Fragment {
 
         // Reseta as props
         enumComponent.getFragmentComponent().resetProps();
-        enumComponent.getFragmentCode().resetProps();
         enumComponent.getFragmentXML().resetProps();
+        if (enumComponent.getFragmentCode() != null) {
+            enumComponent.getFragmentCode().resetProps();
+        }
 
         // Define qual sera o componente da demo
         instance.setEnumComponent(enumComponent);
@@ -69,7 +71,13 @@ public class DemoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_demo, container, false);
+        View view = null;
+
+        if (enumComponent.getFragmentCode() != null) {
+            view = inflater.inflate(R.layout.fragment_demo, container, false);
+        } else {
+            view = inflater.inflate(R.layout.fragment_demo_layout, container, false);
+        }
 
         // Declara a bottom bar
         BottomBar mBottomBar = (BottomBar) view.findViewById(R.id.bottomBar);

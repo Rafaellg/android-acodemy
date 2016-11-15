@@ -45,5 +45,10 @@
             android:id="@+id/btnToggleButton"
             style="@style/AppTheme.Button" />
 
+        <Button
+            android:text="@string/item_spinner"
+            android:id="@+id/btnSpinner"
+            style="@style/AppTheme.Button" />
+
     </LinearLayout>
 </RelativeLayout>

@@ -18,14 +18,14 @@ import io.github.kbiakov.codeview.views.DiffModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
-public class IBXMLFragment extends CustomFragment {
+public class SPXMLFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
     private int width = -1, height = -1, color = -1;
 
-    public IBXMLFragment() {
+    public SPXMLFragment() {
         // Required empty public constructor
     }
 
@@ -75,47 +75,16 @@ public class IBXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<ImageButton");
-        codeList.add("android:id=\"@+id/btnDemo\"");
-        if (width == -1) {
-            codeList.add("android:layout_width=\"120dp\"");
-        }
-        if (width == -1) {
-            codeList.add("android:layout_height=\"60dp\"");
-        }
-        codeList.add("app:srcCompat=\"@drawable/ic_touch\"");
+        codeList.add("<Spinner");
+        codeList.add("android:id=\"@+id/spinnerDemo\"");
+        codeList.add("android:layout_width=\"200dp\"");
+        codeList.add("android:layout_height=\"wrap_content\"");
+        codeList.add("android:background=\"@android:color/white\"");
         codeList.add("android:layout_gravity=\"center\"/>");
 
         // Atualiza o codigo
         codeView.setColorTheme(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));
         codeView.highlightCode(Util.getDefaultCodeLanguage());
         codeView.setCodeContent(Util.getStringFromCodeList(codeList));
-
-        // Exibe as linhas alteradas
-        CodeWithDiffsAdapter diffsAdapter = new CodeWithDiffsAdapter(getContext(), Util.getStringFromCodeList(codeList));
-        diffsAdapter.setColorTheme$codeview_compileReleaseKotlin(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));
-        diffsAdapter.highlightCode(Util.getDefaultCodeLanguage(), new Function0<Unit>() {
-            @Override
-            public Unit invoke() {
-                return null;
-            }
-        });
-        codeView.setAdapter(diffsAdapter);
-
-        // Adiciona as linhas alternativas
-        if (width != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_width=\"" + width + "dp\"", true));
-        }
-        if (height != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:layout_height=\"" + height + "dp\"", true));
-        }
-        if (color != -1) {
-            diffsAdapter.addFooterEntity(codeList.size()-2, new DiffModel("android:backgroundTint=\"" + Util.getHexFromIntColor(color) + "\"", true));
-        }
-    }
-
-    @Override
-    public void resetProps() {
-        color = width = height = -1;
     }
 }

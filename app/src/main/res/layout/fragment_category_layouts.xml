@@ -26,13 +26,13 @@
             style="@style/AppTheme.Button" />
 
         <Button
-            android:text="@string/item_frame_layout"
-            android:id="@+id/btnFrameLayout"
+            android:text="@string/item_linear_layout_vertical"
+            android:id="@+id/btnLinearLayoutVertical"
             style="@style/AppTheme.Button" />
 
         <Button
-            android:text="@string/item_linear_layout"
-            android:id="@+id/btnLinearLayout"
+            android:text="@string/item_linear_layout_horizontal"
+            android:id="@+id/btnLinearLayoutHorizontal"
             style="@style/AppTheme.Button" />
 
         <Button

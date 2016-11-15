@@ -18,7 +18,9 @@
     <string name="text_hellow_world">Hello World!</string>
     <string name="text_goodbye_world">Goodbye World!</string>
     <string name="text_full_name">Nome Completo</string>
+    <string name="text_email">E-mail</string>
     <string name="text_show">Exibir</string>
+    <string name="text_enter">Entrar</string>
     <string name="text_empty">Vazio</string>
 
     <!-- PROPERTIES -->
@@ -72,13 +74,13 @@
 
     <!-- LAYOUTS CATEGORY -->
     <string name="item_grid_layout">Grid Layout</string>
-    <string name="item_linear_layout">Linear Layout</string>
+    <string name="item_linear_layout_vertical">Linear Layout (Vertical)</string>
+    <string name="item_linear_layout_horizontal">Linear Layout (Horizontal)</string>
     <string name="item_relative_layout">Relative Layout</string>
-    <string name="item_frame_layout">Frame Layout</string>
 
     <!-- CONTAINERS CATEGORY -->
     <string name="item_list_view">List View</string>
-    <string name="item_recycler_view">Recycler View</string>
+    <string name="item_web_view">Web View</string>
 
     <!-- IMAGES & MEDIA CATEGORY -->
     <string name="item_image_btn">Image Button</string>

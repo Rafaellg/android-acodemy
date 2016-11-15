@@ -1,4 +1,4 @@
-package com.kreativ.rafael.androidschool.fragment.category.widgets;
+package com.kreativ.rafael.androidschool.fragment.category.imagesmedia;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

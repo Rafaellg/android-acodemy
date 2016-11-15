@@ -21,8 +21,8 @@ public class CategoryLayoutsFragment extends Fragment {
 
         // Get buttons from screen
         Button btnGridLayout = (Button) view.findViewById(R.id.btnGridLayout);
-        Button btnFrameLayout = (Button) view.findViewById(R.id.btnFrameLayout);
-        Button btnLinearLayout = (Button) view.findViewById(R.id.btnLinearLayout);
+        Button btnLinearLayoutVertical = (Button) view.findViewById(R.id.btnLinearLayoutVertical);
+        Button btnLinearLayoutHorizontal = (Button) view.findViewById(R.id.btnLinearLayoutHorizontal);
         Button btnRelativeLayout = (Button) view.findViewById(R.id.btnRelativeLayout);
 
         // Set buttons click
@@ -32,16 +32,16 @@ public class CategoryLayoutsFragment extends Fragment {
                 openFragment(EnumComponent.GridLayout);
             }
         });
-        btnFrameLayout.setOnClickListener(new View.OnClickListener() {
+        btnLinearLayoutVertical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.FrameLayout);
+                openFragment(EnumComponent.LinearLayoutVertical);
             }
         });
-        btnLinearLayout.setOnClickListener(new View.OnClickListener() {
+        btnLinearLayoutHorizontal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.LinearLayout);
+                openFragment(EnumComponent.LinearLayoutHorizontal);
             }
         });
         btnRelativeLayout.setOnClickListener(new View.OnClickListener() {

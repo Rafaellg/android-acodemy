@@ -33,7 +33,7 @@ public class CategoryContainersFragment extends Fragment {
         btnRecyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFragment(EnumComponent.RecyclerView);
+                openFragment(EnumComponent.WebView);
             }
         });
 

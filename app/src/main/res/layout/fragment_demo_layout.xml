@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.kreativ.rafael.androidschool.fragment.category.widgets.SBCodeFragment">
+
+  <FrameLayout
+      android:id="@+id/inner_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingBottom="50dp"/>
+
+  <com.roughike.bottombar.BottomBar
+      android:id="@+id/bottomBar"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_alignParentBottom="true"
+      app:bb_tabXmlResource="@xml/bottombar_layout_tabs"
+      app:bb_inActiveTabColor="@android:color/black"
+      app:bb_activeTabColor="@android:color/white"/>
+
+ </RelativeLayout>

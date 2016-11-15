@@ -25,5 +25,15 @@
             android:id="@+id/btnImageButton"
             style="@style/AppTheme.Button" />
 
+        <Button
+            android:text="@string/item_image_view"
+            android:id="@+id/btnImageView"
+            style="@style/AppTheme.Button" />
+
+        <Button
+            android:text="@string/item_video_view"
+            android:id="@+id/btnVideoView"
+            style="@style/AppTheme.Button" />
+
     </LinearLayout>
 </RelativeLayout>

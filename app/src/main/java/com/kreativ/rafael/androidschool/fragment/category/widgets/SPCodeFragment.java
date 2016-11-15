@@ -1,6 +1,8 @@
-package com.kreativ.rafael.androidschool.fragment.category.textfields;
+package com.kreativ.rafael.androidschool.fragment.category.widgets;
+
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +16,19 @@ import java.util.List;
 
 import io.github.kbiakov.codeview.CodeView;
 
-public class ETXMLFragment extends CustomFragment {
+public class SPCodeFragment extends CustomFragment {
 
     private CodeView codeView;
 
     private List<String> codeList = new ArrayList<>();
 
-    public ETXMLFragment() {
+    public SPCodeFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -47,30 +54,25 @@ public class ETXMLFragment extends CustomFragment {
         codeList = new ArrayList<>();
 
         // Adiciona as linhas padroes
-        codeList.add("<EditText");
-        codeList.add("android:id=\"@+id/editTextDemo\"");
-        codeList.add("android:layout_width=\"wrap_content\"");
-        codeList.add("android:layout_height=\"wrap_content\"");
-        codeList.add("android:inputType=\"textPersonName\"");
-        codeList.add("android:ems=\"10\"");
-        codeList.add("android:hint=\""+ getString(R.string.text_full_name) +"\"");
-        codeList.add("android:textColor=\"@android:color/white\"");
-        codeList.add("android:backgroundTint=\"@android:color/white\"");
-        codeList.add("android:textColorHint=\"@color/hint_foreground_material_dark\"");
-        codeList.add("android:layout_gravity=\"center\"/>");
-
+        codeList.add("Spinner spinnerDemo = (Spinner) view.findViewById(R.id.spinnerDemo);");
         codeList.add("");
-
-        codeList.add("<Button");
-        codeList.add("android:id=\"@+id/buttonDemo\"");
-        codeList.add("android:text=\"" + getString(R.string.text_show) + "\"");
-        codeList.add("android:layout_width=\"wrap_content\"");
-        codeList.add("android:layout_height=\"wrap_content\"");
-        codeList.add("android:layout_marginTop=\"32dp\" />");
+        codeList.add("final String[] array = new String[] {\"A\", \"B\", \"C\"};");
+        codeList.add("ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, array);");
+        codeList.add("spinnerDemo.setAdapter(adapter);");
+        codeList.add("");
+        codeList.add("spinnerDemo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {");
+        codeList.add("\t\t@Override");
+        codeList.add("\t\tpublic void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {");
+        codeList.add("\t\t\t\tToast.makeText(getContext(), array[i], Toast.LENGTH_SHORT).show();");
+        codeList.add("\t\t}");
+        codeList.add("\t\t@Override");
+        codeList.add("\t\tpublic void onNothingSelected(AdapterView<?> adapterView) { }");
+        codeList.add("});");
 
         // Atualiza o codigo
         codeView.setColorTheme(Util.getDefaultCodeTheme().withBgContent(Util.getDefaultCodeBg(getContext())));
         codeView.highlightCode(Util.getDefaultCodeLanguage());
         codeView.setCodeContent(Util.getStringFromCodeList(codeList));
     }
+
 }

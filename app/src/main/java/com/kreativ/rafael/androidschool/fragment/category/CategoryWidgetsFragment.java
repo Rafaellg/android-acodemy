@@ -25,6 +25,7 @@ public class CategoryWidgetsFragment extends Fragment {
         Button btnFloatingActionButton = (Button) view.findViewById(R.id.btnFloatActionButton);
         Button btnRadioButton = (Button) view.findViewById(R.id.btnRadioButton);
         Button btnToggleButton = (Button) view.findViewById(R.id.btnToggleButton);
+        Button btnSpinner = (Button) view.findViewById(R.id.btnSpinner);
 
         // Set buttons click
         btnTextView.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +56,12 @@ public class CategoryWidgetsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 openFragment(EnumComponent.BtnToggle);
+            }
+        });
+        btnSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment(EnumComponent.Spinner);
             }
         });
 
