@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kreativ.rafael.androidschool">
+    package="com.rafaelguimas.androidschool">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".ApplicationMain"
+        android:name="com.rafaelguimas.androidschool.ApplicationMain"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.rafaelguimas.androidschool.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AboutActivity"
+            android:name="com.rafaelguimas.androidschool.activity.AboutActivity"
             android:label="@string/title_activity_about" />
     </application>
 

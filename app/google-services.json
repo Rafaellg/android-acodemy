@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "890181886712",
+    "firebase_url": "https://android-school-922ea.firebaseio.com",
+    "project_id": "android-school-922ea",
+    "storage_bucket": "android-school-922ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890181886712:android:ce453cd3d1fdf952",
+        "android_client_info": {
+          "package_name": "com.kreativ.rafael.androidschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890181886712-f2gr3c74p38g4faqckhc5mvr5oafvi8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kreativ.rafael.androidschool",
+            "certificate_hash": "CFEDAFE69221419D6DF213340BBA610E3E87EE75"
+          }
+        },
+        {
+          "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB0pc11lsxFQcd-Tq4Kf35euLNIFTv9iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890181886712:android:355304cdaac14fad",
+        "android_client_info": {
+          "package_name": "com.rafaelguimas.androidschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890181886712-ejs61emll4uigdnqsgctst3fclff00na.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafaelguimas.androidschool",
+            "certificate_hash": "CFEDAFE69221419D6DF213340BBA610E3E87EE75"
+          }
+        },
+        {
+          "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB0pc11lsxFQcd-Tq4Kf35euLNIFTv9iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

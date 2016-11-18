@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kreativ.rafael.androidschool.fragment.StartFragment">
+    tools:context="com.rafaelguimas.androidschool.fragment.StartFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -57,11 +57,12 @@
         android:layout_marginRight="10dp" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/btn_android_developers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_github_logo_white"
+        android:src="@drawable/ic_android_black_24dp"
+        android:tint="@android:color/white"
         android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />

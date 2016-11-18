@@ -19,4 +19,5 @@
     <dimen name="dimen_short">4dp</dimen>
     <dimen name="dimen_normal">8dp</dimen>
     <dimen name="dimen_large">12dp</dimen>
+    <dimen name="dimen_very_large">16dp</dimen>
 </resources>
