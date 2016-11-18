@@ -93,6 +93,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890181886712:android:ea3fa8c432629ac0",
+        "android_client_info": {
+          "package_name": "com.rafaelguimas.acodemy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890181886712-868uruhde75pca1oldavcb71627h9b4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafaelguimas.acodemy",
+            "certificate_hash": "CFEDAFE69221419D6DF213340BBA610E3E87EE75"
+          }
+        },
+        {
+          "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB0pc11lsxFQcd-Tq4Kf35euLNIFTv9iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890181886712-4d7dd5p09kflv5e9vroqi66heqc5rccs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

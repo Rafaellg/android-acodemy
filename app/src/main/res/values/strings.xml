@@ -44,7 +44,7 @@
 
     <!-- START -->
     <string name="text_welcome">Bem vindo ao Acodemy!</string>
-    <string name="text_select_category">Selecione uma categoria no menu lateral</string>
+    <string name="text_select_category">Selecione uma categoria no menu lateral \npara ver os componentes disponíveis</string>
 
     <!-- INTRO -->
     <string name="text_paragraph_1">

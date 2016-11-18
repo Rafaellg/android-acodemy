@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rafaelguimas.androidschool.fragment.StartFragment">
+    tools:context="com.rafaelguimas.acodemy.fragment.StartFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -28,7 +28,8 @@
             android:text="@string/text_select_category"
             android:id="@+id/textView2"
             android:layout_marginTop="8dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textAlignment="center" />
 
     </LinearLayout>
 
