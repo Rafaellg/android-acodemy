@@ -9,6 +9,7 @@
     <string name="title_shared_preferences">userPreferences</string>
 
     <!-- SHARED PREFERENCES -->
+    <string name="pref_sync">sync</string>
     <string name="pref_evaluate">evaluate</string>
     <string name="pref_stars">stars</string>
     <string name="pref_obs">obs</string>

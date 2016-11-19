@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .commit();
 
         // Verifica se o usuario ja avaliou o app e exibe dialog
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.title_shared_preferences), -1);
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.title_shared_preferences), MODE_PRIVATE);
         if (!sharedPreferences.getBoolean(getString(R.string.pref_evaluate), false)) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.title_atention)

@@ -3,6 +3,8 @@ package com.rafaelguimas.acodemy.util;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -16,6 +18,8 @@ import com.rafaelguimas.acodemy.R;
 import java.util.List;
 
 import io.github.kbiakov.codeview.highlight.ColorTheme;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Rafael on 20/09/2016.
@@ -67,7 +71,7 @@ public class Util {
 
     public static void showEvaluateDialog(final Context context) {
         // Declara as preferencias
-        final SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.title_shared_preferences), -1);
+        final SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.title_shared_preferences), MODE_PRIVATE);
 
         // Declara a view interna
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_classification, null);
@@ -112,5 +116,13 @@ public class Util {
                 .setNegativeButton(R.string.text_cancel, null)
                 .show();
     }
+
+    public static boolean hasInternetAccess(Context context) {
+        final ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return networkInfo != null && networkInfo.isConnected() && networkInfo.isAvailable();
+    }
+
 
 }

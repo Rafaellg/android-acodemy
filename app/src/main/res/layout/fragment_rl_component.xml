@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeLayoutdemo">
+        android:id="@+id/relativeLayoutdemo"
+        android:layout_marginBottom="@dimen/dimen_normal">
 
         <ImageView
             android:layout_width="100dp"

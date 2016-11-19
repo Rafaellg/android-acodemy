@@ -7,6 +7,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rafaelguimas.acodemy.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by Rafael on 17/11/2016.
  */
@@ -14,7 +16,7 @@ import com.rafaelguimas.acodemy.R;
 public class FirebaseUtil {
 
     public static String saveClassification(int stars, String obs, Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.title_shared_preferences), -1);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.title_shared_preferences), MODE_PRIVATE);
         String key = sharedPreferences.getString(context.getString(R.string.pref_firebase_key), "---");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
